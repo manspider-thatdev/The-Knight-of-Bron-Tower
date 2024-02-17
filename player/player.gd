@@ -17,7 +17,8 @@ func _process(_delta):
 	if move_vector == Vector2.ZERO or (false if not tween else tween.is_valid()):
 		return
 	
-	if cast_dict[move_vector.normalized()].is_colliding():
+	move_vector = move_vector.normalized()
+	if cast_dict[move_vector].is_colliding():
 		return
 	
 	tween = create_tween()
