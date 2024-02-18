@@ -1,9 +1,10 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1708141392
+::res://::1708213567
 icon.svg::CompressedTexture2D::1845387245217874012::1707839754::1707839759::1::::<><>::
-main.tscn::PackedScene::5035942929001725333::1708136609::0::1::::<><>::res://player/player.gd<>uid://by4fpjw3bu86u::::res://art/art.png<>uid://c1hxnutbmq3bt::::res://art/light.png
-::res://art/::1708141484
+main.tscn::PackedScene::5035942929001725333::1708213463::0::1::::<><>::res://player/player.gd<>uid://by4fpjw3bu86u::::res://art/art.png<>res://art/visibility.gdshader<>uid://c1hxnutbmq3bt::::res://art/light.png
+::res://art/::1708214177
 art.png::CompressedTexture2D::4131150765716219494::1708113371::1708113375::1::::<><>::
-light.png::CompressedTexture2D::6613622732288274373::1708141493::1708141497::1::::<><>::
-::res://player/::1708107513
-player.gd::GDScript::-1::1708107513::0::1::::Player<>Sprite2D<>::
+light.png::CompressedTexture2D::6613622732288274373::1708214185::1708214186::1::::<><>::
+visibility.gdshader::Shader::-1::1708213463::0::1::::<><>::
+::res://player/::1708213324
+player.gd::GDScript::-1::1708213324::0::1::::Player<>Sprite2D<>::
