@@ -14,6 +14,10 @@ config/name="The (K)night of Bron Tower"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*res://globals/game_manager.gd"
+
 [input]
 
 ui_left={

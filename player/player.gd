@@ -8,24 +8,41 @@ extends Sprite2D
 
 
 var tween: Tween
+var target := Vector2.ZERO
+var glow_energy := true
+
+
+func _ready():
+	GameManager.connect("game_turn", _on_game_turn)
+	tween = create_tween()
+	tween.kill()
 
 
 func _process(_delta):
+	if tween.is_valid(): 
+		return
+	
 	if Input.is_action_just_pressed("ui_accept"):
-		player_glow.visible = !player_glow.visible
+		glow_energy = !glow_energy
 	
 	var move_vector: Vector2 = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	
 	if move_vector.x != 0:
 		move_vector.y = 0
-	
-	if move_vector == Vector2.ZERO or (false if not tween else tween.is_valid()):
-		return
-	
 	move_vector = move_vector.normalized()
-	if cast_dict[move_vector].is_colliding():
+	
+	if move_vector == Vector2.ZERO or cast_dict[move_vector].is_colliding(): 
 		return
 	
+	target = position + (move_vector * 16)
+	
+	GameManager.emit_signal("game_turn")
+
+
+func _on_game_turn():
 	tween = create_tween()
-	tween.tween_property(self, "position", position + (move_vector * 16), 1)
+	tween.tween_property(self, "position", target, 1) # Move Tween
+	tween.parallel().tween_property(player_glow, "energy", int(glow_energy), 1) # Glow Tween
+	
 	await tween.finished
 	tween.kill()
