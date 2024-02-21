@@ -19,12 +19,19 @@ func _ready():
 
 
 func _process(_delta):
-	if tween.is_valid(): 
-		return
+	if not tween.is_valid() and (glow_inputs() or move_inputs()):
+		GameManager.emit_signal("game_turn", GameManager.turn_time)
+
+
+func glow_inputs() -> bool:
+	if not Input.is_action_just_pressed("ui_accept"):
+		return false
 	
-	if Input.is_action_just_pressed("ui_accept"):
-		glow_energy = !glow_energy
-	
+	glow_energy = !glow_energy
+	return true
+
+
+func move_inputs() -> bool:
 	var move_vector: Vector2 = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
 	
 	if move_vector.x != 0:
@@ -32,17 +39,16 @@ func _process(_delta):
 	move_vector = move_vector.normalized()
 	
 	if move_vector == Vector2.ZERO or cast_dict[move_vector].is_colliding(): 
-		return
+		return false
 	
 	target = position + (move_vector * 16)
-	
-	GameManager.emit_signal("game_turn")
+	return true
 
 
-func _on_game_turn():
+func _on_game_turn(turn_time):
 	tween = create_tween()
-	tween.tween_property(self, "position", target, 1) # Move Tween
-	tween.parallel().tween_property(player_glow, "energy", int(glow_energy), 1) # Glow Tween
+	tween.tween_property(player_glow, "energy", int(glow_energy), turn_time) # Glow Tween
+	tween.parallel().tween_property(self, "position", target, turn_time) # Move Tween
 	
 	await tween.finished
 	tween.kill()
