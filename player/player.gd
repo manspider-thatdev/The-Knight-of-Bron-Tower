@@ -49,6 +49,7 @@ func move_inputs() -> bool:
 func _on_game_turn(turn_time):
 	tween = create_tween()
 	tween.tween_property(player_glow, "energy", int(glow_energy), turn_time) # Glow Tween
+	tween.parallel().tween_property(self, "monitorable", glow_energy, turn_time) # Area Tween
 	tween.parallel().tween_property(self, "position", target, turn_time) # Move Tween
 	
 	await tween.finished
