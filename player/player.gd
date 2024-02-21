@@ -1,5 +1,5 @@
 class_name Player
-extends Sprite2D
+extends Area2D
 
 
 @onready var cast_dict = {Vector2.DOWN: $DownCast, Vector2.RIGHT: $RightCast, 
@@ -8,11 +8,12 @@ extends Sprite2D
 
 
 var tween: Tween
-var target := Vector2.ZERO
+var target: Vector2
 var glow_energy := true
 
 
 func _ready():
+	target = position
 	GameManager.connect("game_turn", _on_game_turn)
 	tween = create_tween()
 	tween.kill()

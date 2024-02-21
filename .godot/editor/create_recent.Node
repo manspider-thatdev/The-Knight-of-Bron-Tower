@@ -1,3 +1,5 @@
+CollisionPolygon2D
+Area2D
 DirectionalLight2D
 Sprite2D
 LightOccluder2D
