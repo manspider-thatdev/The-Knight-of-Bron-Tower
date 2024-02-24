@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://b542fa4myg1px"]
+
+[ext_resource type="Script" path="res://components/dir_cast.gd" id="1_bnyum"]
+
+[node name="DirCast" type="Node2D"]
+script = ExtResource("1_bnyum")
+
+[node name="DownCast" type="RayCast2D" parent="."]
+target_position = Vector2(0, 16)
+collision_mask = 0
+
+[node name="RightCast" type="RayCast2D" parent="."]
+target_position = Vector2(16, 0)
+collision_mask = 0
+
+[node name="LeftCast" type="RayCast2D" parent="."]
+target_position = Vector2(-16, 0)
+collision_mask = 0
+
+[node name="UpCast" type="RayCast2D" parent="."]
+target_position = Vector2(0, -16)
+collision_mask = 0

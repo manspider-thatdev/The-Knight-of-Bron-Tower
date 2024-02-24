@@ -1,5 +1,6 @@
 res://main.tscn
 res://art/visibility.gdshader
 res://player/player.gd
-res://globals/game_manager.gd
+res://components/dir_cast.gd
 res://knight/knight.gd
+res://components/dir_cast.tscn
