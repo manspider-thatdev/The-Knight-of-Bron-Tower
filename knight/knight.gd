@@ -6,12 +6,14 @@ extends Sprite2D
 
 
 var target: Vector2
+var post_pos: Vector2
 var tween: Tween
 var dir: Vector2
 
 
 func _ready():
 	target = position
+	post_pos = position
 	GameManager.connect("game_turn", _on_game_turn)
 	
 	for i in 3:
@@ -20,18 +22,28 @@ func _ready():
 
 
 func _on_game_turn(turn_time):
-	dir = (target - position).normalized() * 16 + position
-	
-	var does_move = target != position
+	find_target()
+	dir = (target - position).normalized() * 16
 	
 	tween = create_tween()
-	tween.tween_property(self, "position", dir, turn_time) # Move Tween
+	tween.tween_property(self, "position", dir + position, turn_time) # Move Tween
 	
 	await tween.finished
 	tween.kill()
 	
-	if does_move:
+	if dir:
 		set_p_glow_cast()
+
+
+func find_target():
+	var collision_directions = p_glow_dir_cast.get_colliding_directions()
+	var p_glow_bounds: Dictionary = p_glow_dir_cast.get_collision_bounds()
+	
+	for direction in collision_directions:
+		if p_glow_bounds[direction] > 0:
+			target = direction * (p_glow_bounds[direction] + 8)
+			target += global_position
+			break
 
 
 func set_p_glow_cast():

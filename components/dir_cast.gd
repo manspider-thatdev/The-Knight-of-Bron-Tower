@@ -63,15 +63,30 @@ func is_colliding(direction: Vector2) -> bool:
 	return cast_dict[direction].is_colliding()
 
 
+func get_colliding_directions() -> Array[Vector2]:
+	var colliding_directions: Array[Vector2] = []
+	
+	for direction in cast_dict.keys():
+		if is_colliding(direction):
+			colliding_directions.append(direction)
+	
+	return colliding_directions
+
+
 func get_collision_length(direction: Vector2) -> float:
-	var point = cast_dict[direction].get_collision_point() - global_position
+	var point: Vector2 = cast_dict[direction].get_collision_point()
+	point = Vector2.ZERO if point == Vector2.ZERO else point - global_position
 	if direction.y == 0:
-		return abs(point.x)
-	return abs(point.y)
+		return absf(point.x)
+	return absf(point.y)
 
 
 func get_collision_bounds() -> Dictionary:
-	return {Vector2.RIGHT: get_collision_length(Vector2.RIGHT),\
-			Vector2.DOWN: get_collision_length(Vector2.DOWN),\
-			Vector2.LEFT: get_collision_length(Vector2.LEFT),\
-			Vector2.UP: get_collision_length(Vector2.UP)}
+	var collision_bounds := {}
+	for direction in cast_dict.keys():
+		collision_bounds[direction] = get_collision_length(direction)
+	return collision_bounds
+
+
+func get_dir_collider(direction: Vector2) -> Object:
+	return cast_dict[direction].get_collider()
