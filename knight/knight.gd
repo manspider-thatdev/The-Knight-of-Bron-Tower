@@ -10,6 +10,8 @@ var post_pos: Vector2
 var tween: Tween
 var dir: Vector2
 
+var move_path: Array[Vector2]
+
 
 func _ready():
 	target = position
@@ -24,6 +26,12 @@ func _ready():
 func _on_game_turn(turn_time):
 	find_target()
 	dir = (target - position).normalized() * 16
+	
+	if dir != Vector2.ZERO:
+		move_path.push_back(dir * 0.0625)
+	elif position == target and position != post_pos:
+		dir = move_path.pop_back() * -16
+		target = dir + position
 	
 	tween = create_tween()
 	tween.tween_property(self, "position", dir + position, turn_time) # Move Tween
