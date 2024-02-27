@@ -3,6 +3,7 @@ extends Sprite2D
 
 @onready var wall_cast = $WallDirCast
 @onready var p_glow_dir_cast = $PGlowDirCast
+@onready var player_check_area = $PlayerCheckArea
 
 
 var target: Vector2
@@ -39,6 +40,8 @@ func _on_game_turn(turn_time):
 	await tween.finished
 	tween.kill()
 	
+	if not player_check_area.get_overlapping_areas().is_empty():
+		get_tree().reload_current_scene()
 	if dir:
 		set_p_glow_cast()
 

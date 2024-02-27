@@ -3,3 +3,4 @@ res://art/visibility.gdshader
 res://components/dir_cast.gd
 res://knight/knight.gd
 res://components/dir_cast.tscn
+res://player/player.gd

@@ -4,7 +4,7 @@ extends Sprite2D
 
 @onready var dir_cast = $DirCast
 @onready var player_glow = $PlayerGlow
-@onready var glow_area = $GlowArea/CollisionPolygon2D
+@onready var glow_area = $GlowArea
 
 
 var tween: Tween
@@ -47,7 +47,8 @@ func move_inputs() -> bool:
 func _on_game_turn(turn_time):
 	tween = create_tween()
 	tween.tween_property(player_glow, "energy", int(glow_energy), turn_time) # Glow Tween
-	tween.parallel().tween_property(glow_area, "disabled", !glow_energy, turn_time) # Area Tween
+	for area in glow_area.get_children():
+		tween.parallel().tween_property(area, "disabled", !glow_energy, turn_time) # Area Tween
 	tween.parallel().tween_property(self, "position", target, turn_time) # Move Tween
 	
 	await tween.finished
