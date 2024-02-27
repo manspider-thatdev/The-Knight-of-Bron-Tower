@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cd0pikngn634d"]
+[gd_scene load_steps=13 format=3 uid="uid://cd0pikngn634d"]
 
 [ext_resource type="Script" path="res://player/player.gd" id="2_5p1vf"]
 [ext_resource type="Texture2D" uid="uid://by4fpjw3bu86u" path="res://art/art.png" id="2_yqpy3"]
@@ -37,6 +37,9 @@ physics_layer_0/collision_layer = 2
 physics_layer_0/collision_mask = 0
 sources/1 = SubResource("TileSetAtlasSource_qrp8n")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fbqlq"]
+size = Vector2(8, 8)
+
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_0r54h"]
 shader = ExtResource("4_5nb7a")
 
@@ -61,6 +64,14 @@ texture = ExtResource("2_yqpy3")
 hframes = 16
 vframes = 16
 script = ExtResource("2_5p1vf")
+
+[node name="PlayerArea" type="Area2D" parent="Player"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player/PlayerArea"]
+shape = SubResource("RectangleShape2D_fbqlq")
+
+[node name="DirCast" parent="Player" instance=ExtResource("5_ic3ku")]
+collision_mask = 2
 
 [node name="VisibilityLight" type="PointLight2D" parent="Player"]
 blend_mode = 2
@@ -95,9 +106,6 @@ shadow_enabled = true
 shadow_filter_smooth = 64.0
 shadow_item_cull_mask = 4
 texture = ExtResource("4_g3ikr")
-
-[node name="DirCast" parent="Player" instance=ExtResource("5_ic3ku")]
-collision_mask = 2
 
 [node name="Knight" type="Sprite2D" parent="."]
 z_index = 2
