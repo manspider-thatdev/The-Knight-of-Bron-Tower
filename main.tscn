@@ -66,6 +66,7 @@ vframes = 16
 script = ExtResource("2_5p1vf")
 
 [node name="PlayerArea" type="Area2D" parent="Player"]
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player/PlayerArea"]
 shape = SubResource("RectangleShape2D_fbqlq")
@@ -128,3 +129,9 @@ collision_mask = 2
 collision_mask = 4
 collide_with_areas = true
 collide_with_bodies = false
+
+[node name="PlayerCheckArea" type="Area2D" parent="Knight"]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Knight/PlayerCheckArea"]
+shape = SubResource("RectangleShape2D_fbqlq")
