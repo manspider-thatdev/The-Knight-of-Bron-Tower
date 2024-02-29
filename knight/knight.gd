@@ -52,7 +52,7 @@ func find_target():
 	
 	for direction in collision_directions:
 		if p_glow_bounds[direction] > 0:
-			target = direction * (p_glow_bounds[direction] + 8)
+			target = direction * (p_glow_bounds[direction] + 4)
 			target += global_position
 			break
 
