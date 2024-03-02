@@ -41,7 +41,7 @@ func _on_game_turn(turn_time):
 	tween.kill()
 	
 	if not player_check_area.get_overlapping_areas().is_empty():
-		get_tree().reload_current_scene()
+		get_tree().reload_current_scene() # Reset Level
 	if dir:
 		set_p_glow_cast()
 
