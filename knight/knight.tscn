@@ -1,0 +1,43 @@
+[gd_scene load_steps=7 format=3 uid="uid://cuqbisxr24jd0"]
+
+[ext_resource type="Shader" path="res://art/visibility.gdshader" id="1_csxna"]
+[ext_resource type="Texture2D" uid="uid://by4fpjw3bu86u" path="res://art/art.png" id="2_urv17"]
+[ext_resource type="Script" path="res://knight/knight.gd" id="3_bl248"]
+[ext_resource type="PackedScene" uid="uid://b542fa4myg1px" path="res://components/dir_cast.tscn" id="4_2pfc6"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_0r54h"]
+shader = ExtResource("1_csxna")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fbqlq"]
+size = Vector2(8, 8)
+
+[node name="Knight" type="Sprite2D"]
+z_index = 2
+material = SubResource("ShaderMaterial_0r54h")
+position = Vector2(72, 136)
+texture = ExtResource("2_urv17")
+hframes = 16
+vframes = 16
+frame = 16
+script = ExtResource("3_bl248")
+
+[node name="WallDirCast" parent="." instance=ExtResource("4_2pfc6")]
+visible = false
+right_length = 256
+down_length = 256
+left_length = 256
+up_length = 256
+collision_mask = 2
+
+[node name="PGlowDirCast" parent="." instance=ExtResource("4_2pfc6")]
+visible = false
+collision_mask = 4
+collide_with_areas = true
+collide_with_bodies = false
+
+[node name="PlayerCheckArea" type="Area2D" parent="."]
+visible = false
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCheckArea"]
+shape = SubResource("RectangleShape2D_fbqlq")

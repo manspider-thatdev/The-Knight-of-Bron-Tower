@@ -1,0 +1,81 @@
+[gd_scene load_steps=8 format=3 uid="uid://fx5pj0valbvl"]
+
+[ext_resource type="Texture2D" uid="uid://by4fpjw3bu86u" path="res://art/art.png" id="1_r13f0"]
+[ext_resource type="Script" path="res://player/player.gd" id="2_buhwe"]
+[ext_resource type="PackedScene" uid="uid://b542fa4myg1px" path="res://components/dir_cast.tscn" id="3_7ddl7"]
+[ext_resource type="Texture2D" uid="uid://c1hxnutbmq3bt" path="res://art/light.png" id="4_w2ir0"]
+[ext_resource type="Texture2D" uid="uid://doh73k3acded4" path="res://art/player_light.png" id="5_uo3qf"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fbqlq"]
+size = Vector2(8, 8)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mo0gi"]
+size = Vector2(8, 8)
+
+[node name="Player" type="Sprite2D"]
+z_index = 2
+position = Vector2(40, 104)
+texture = ExtResource("1_r13f0")
+hframes = 16
+vframes = 16
+script = ExtResource("2_buhwe")
+
+[node name="PlayerArea" type="Area2D" parent="."]
+visible = false
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
+shape = SubResource("RectangleShape2D_fbqlq")
+
+[node name="DirCast" parent="." instance=ExtResource("3_7ddl7")]
+visible = false
+collision_mask = 2
+
+[node name="VisibilityLight" type="PointLight2D" parent="."]
+blend_mode = 2
+shadow_enabled = true
+shadow_filter_smooth = 4.0
+texture = ExtResource("4_w2ir0")
+texture_scale = 10.0
+
+[node name="WorldShadow" type="PointLight2D" parent="."]
+blend_mode = 2
+range_item_cull_mask = 2
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.164706)
+shadow_filter_smooth = 64.0
+texture = ExtResource("4_w2ir0")
+texture_scale = 15.0
+
+[node name="GlowArea" type="Area2D" parent="."]
+visible = false
+collision_layer = 4
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2DMiddle" type="CollisionShape2D" parent="GlowArea"]
+shape = SubResource("RectangleShape2D_mo0gi")
+
+[node name="CollisionShape2DRight" type="CollisionShape2D" parent="GlowArea"]
+position = Vector2(16, 0)
+shape = SubResource("RectangleShape2D_mo0gi")
+
+[node name="CollisionShape2DDown" type="CollisionShape2D" parent="GlowArea"]
+position = Vector2(0, 16)
+shape = SubResource("RectangleShape2D_mo0gi")
+
+[node name="CollisionShape2DLeft" type="CollisionShape2D" parent="GlowArea"]
+position = Vector2(-16, 0)
+shape = SubResource("RectangleShape2D_mo0gi")
+
+[node name="CollisionShape2DUp" type="CollisionShape2D" parent="GlowArea"]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_mo0gi")
+
+[node name="PlayerGlow" type="PointLight2D" parent="."]
+color = Color(0.909804, 0.529412, 0.235294, 1)
+range_item_cull_mask = 4
+shadow_enabled = true
+shadow_filter_smooth = 64.0
+shadow_item_cull_mask = 4
+texture = ExtResource("5_uo3qf")
