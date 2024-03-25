@@ -1,2 +1,4 @@
-res://main.tscn
+res://player/player.tscn
 res://art/visibility.gdshader
+res://knight/knight.tscn
+res://objects/ladder.tscn
