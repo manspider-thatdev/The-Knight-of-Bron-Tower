@@ -20,14 +20,12 @@ vframes = 16
 script = ExtResource("2_buhwe")
 
 [node name="PlayerArea" type="Area2D" parent="."]
-visible = false
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
 shape = SubResource("RectangleShape2D_fbqlq")
 
 [node name="DirCast" parent="." instance=ExtResource("3_7ddl7")]
-visible = false
 collision_mask = 2
 
 [node name="VisibilityLight" type="PointLight2D" parent="."]
@@ -47,7 +45,6 @@ texture = ExtResource("4_w2ir0")
 texture_scale = 15.0
 
 [node name="GlowArea" type="Area2D" parent="."]
-visible = false
 collision_layer = 4
 collision_mask = 0
 monitoring = false

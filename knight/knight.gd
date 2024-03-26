@@ -13,6 +13,8 @@ var dir: Vector2
 
 var move_path: Array[Vector2]
 
+var end_level := false
+
 
 func _ready():
 	target = global_position
@@ -40,6 +42,9 @@ func _on_game_turn(turn_time: float):
 	await tween.finished
 	tween.kill()
 	
+	if end_level: 
+		get_tree().reload_current_scene() # Reset Level
+	
 	if dir:
 		set_p_glow_cast()
 
@@ -64,4 +69,4 @@ func set_p_glow_cast():
 
 
 func _on_player_check_area_entered(_area: Area2D):
-	get_tree().reload_current_scene() # Reset Level
+	end_level = true
