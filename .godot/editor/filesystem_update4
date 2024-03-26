@@ -7,3 +7,5 @@ res://components/dir_cast.tscn
 res://objects/ladder.tscn
 res://player/player.tscn
 res://knight/knight.tscn
+res://knight/knight.gd
+res://globals/game_manager.gd

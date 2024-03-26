@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://knight/knight.gd" id="3_bl248"]
 [ext_resource type="PackedScene" uid="uid://b542fa4myg1px" path="res://components/dir_cast.tscn" id="4_2pfc6"]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_0r54h"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ektit"]
 shader = ExtResource("1_csxna")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fbqlq"]
@@ -13,7 +13,7 @@ size = Vector2(8, 8)
 
 [node name="Knight" type="Sprite2D"]
 z_index = 2
-material = SubResource("ShaderMaterial_0r54h")
+material = SubResource("ShaderMaterial_ektit")
 texture = ExtResource("2_urv17")
 hframes = 16
 vframes = 16
@@ -40,3 +40,5 @@ collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCheckArea"]
 shape = SubResource("RectangleShape2D_fbqlq")
+
+[connection signal="area_entered" from="PlayerCheckArea" to="." method="_on_player_check_area_entered"]

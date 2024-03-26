@@ -660,7 +660,6 @@ sources/0 = SubResource("TileSetScenesCollectionSource_44saj")
 [node name="LevelEditor" type="TileMap"]
 light_mask = 7
 z_index = -2
-scale = Vector2(4, 4)
 tile_set = SubResource("TileSet_dklej")
 format = 2
 layer_0/name = "Background"
