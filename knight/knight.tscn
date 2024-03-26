@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cuqbisxr24jd0"]
+[gd_scene load_steps=8 format=3 uid="uid://cuqbisxr24jd0"]
 
 [ext_resource type="Shader" path="res://art/visibility.gdshader" id="1_csxna"]
 [ext_resource type="Texture2D" uid="uid://by4fpjw3bu86u" path="res://art/art.png" id="2_urv17"]
@@ -10,6 +10,10 @@ shader = ExtResource("1_csxna")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fbqlq"]
 size = Vector2(8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sw75s"]
+atlas = ExtResource("2_urv17")
+region = Rect2(32, 32, 16, 16)
 
 [node name="Knight" type="Sprite2D"]
 z_index = 2
@@ -37,5 +41,9 @@ collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCheckArea"]
 shape = SubResource("RectangleShape2D_fbqlq")
+
+[node name="AlertSprite" type="Sprite2D" parent="."]
+visible = false
+texture = SubResource("AtlasTexture_sw75s")
 
 [connection signal="area_entered" from="PlayerCheckArea" to="." method="_on_player_check_area_entered"]

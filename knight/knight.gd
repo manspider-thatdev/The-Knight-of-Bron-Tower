@@ -4,6 +4,7 @@ extends Sprite2D
 @onready var wall_cast: DirCast = $WallDirCast
 @onready var p_glow_dir_cast: DirCast = $PGlowDirCast
 @onready var player_check_area: Area2D = $PlayerCheckArea
+@onready var alert_sprite: Sprite2D = $AlertSprite
 
 
 var target: Vector2
@@ -47,6 +48,9 @@ func _on_game_turn(turn_time: float):
 	
 	if dir:
 		set_p_glow_cast()
+	
+	if p_glow_dir_cast.is_colliding_any():
+		alert_sprite.visible = true
 
 
 func find_target():

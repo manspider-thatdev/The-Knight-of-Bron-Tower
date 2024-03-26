@@ -59,6 +59,10 @@ extends Node2D
 		$UpCast.collide_with_bodies = value
 
 
+func is_colliding_any() -> bool:
+	return cast_dict.keys().any(is_colliding)
+
+
 func is_colliding(direction: Vector2) -> bool:
 	return cast_dict[direction].is_colliding()
 
