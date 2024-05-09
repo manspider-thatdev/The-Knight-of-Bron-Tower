@@ -1,5 +1,5 @@
 class_name Player
-extends Sprite2D
+extends AnimatedSprite2D
 
 
 @onready var dir_cast = $DirCast

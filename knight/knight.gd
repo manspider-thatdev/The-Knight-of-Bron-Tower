@@ -2,7 +2,7 @@ extends Sprite2D
 
 
 @onready var wall_cast: DirCast = $WallDirCast
-@onready var p_glow_dir_cast: DirCast = $PGlowDirCast
+@onready var p_glow_dir_cast: DirCast = $PlayerDirCast
 @onready var player_check_area: Area2D = $PlayerCheckArea
 @onready var alert_sprite: Sprite2D = $AlertSprite
 

@@ -31,7 +31,7 @@ left_length = 256
 up_length = 256
 collision_mask = 2
 
-[node name="PGlowDirCast" parent="." instance=ExtResource("4_2pfc6")]
+[node name="PlayerDirCast" parent="." instance=ExtResource("4_2pfc6")]
 collision_mask = 4
 collide_with_areas = true
 collide_with_bodies = false
