@@ -1,12 +1,2 @@
-res://art/visibility.gdshader
-res://levels/level_map.tscn
-res://main.tscn
-res://levels/level_1.tscn
-res://levels/level_editor.tscn
-res://components/dir_cast.tscn
-res://objects/ladder.tscn
 res://player/player.tscn
-res://knight/knight.tscn
-res://knight/knight.gd
-res://globals/game_manager.gd
-res://components/dir_cast.gd
+res://art/visibility.gdshader

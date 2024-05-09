@@ -34,6 +34,7 @@ func _on_game_turn(turn_time: float):
 	if dir != Vector2.ZERO:
 		move_path.push_back(dir * 0.0625)
 	elif global_position == target and global_position != post_pos:
+		alert_sprite.visible = false
 		dir = move_path.pop_back() * -16
 		target = dir + global_position
 	
