@@ -2,11 +2,11 @@ ea4bc82a6ad023ab7ee23ee620429895
 ::res://::1715274964
 icon.svg::CompressedTexture2D::1845387245217874012::1707843354::1707843359::1::::<><>::
 main.tscn::PackedScene::5035942929001725333::1712704159::0::1::::<><>::uid://mnfui48wfg37::::res://levels/level_editor.tscn<>uid://ckl1ls5bva2gs::::res://objects/ladder.tscn<>uid://fx5pj0valbvl::::res://player/player.tscn<>uid://cuqbisxr24jd0::::res://knight/knight.tscn
-::res://art/::1715275348
-art.png::CompressedTexture2D::4131150765716219494::1715275353::1715275356::1::::<><>::
+::res://art/::1715277743
+art.png::CompressedTexture2D::4131150765716219494::1715277744::1715277746::1::::<><>::
 light.png::CompressedTexture2D::6613622732288274373::1708217785::1708217786::1::::<><>::
 player_light.png::CompressedTexture2D::8158350020778859339::1708541159::1708541164::1::::<><>::
-visibility.gdshader::Shader::-1::1713021608::0::1::::<><>::
+visibility.gdshader::Shader::-1::1715277202::0::1::::<><>::
 ::res://components/::1712704159
 dir_cast.gd::GDScript::-1::1711489111::0::1::::DirCast<>Node2D<>::
 dir_cast.tscn::PackedScene::4553601280852916717::1712704159::0::1::::<><>::res://components/dir_cast.gd
@@ -21,6 +21,6 @@ level_editor.tscn::PackedScene::869442801816197976::1712704160::0::1::::<><>::ui
 ::res://objects/::1712704159
 ladder.gd::GDScript::-1::1709348781::0::1::::<>Area2D<>::
 ladder.tscn::PackedScene::5499037236444030394::1712704159::0::1::::<><>::res://objects/ladder.gd<>uid://by4fpjw3bu86u::::res://art/art.png
-::res://player/::1712704159
+::res://player/::1715277202
 player.gd::GDScript::-1::1709081603::0::1::::Player<>Sprite2D<>::
-player.tscn::PackedScene::400273715509943953::1712704159::0::1::::<><>::uid://by4fpjw3bu86u::::res://art/art.png<>res://player/player.gd<>uid://b542fa4myg1px::::res://components/dir_cast.tscn<>uid://c1hxnutbmq3bt::::res://art/light.png<>uid://doh73k3acded4::::res://art/player_light.png
+player.tscn::PackedScene::400273715509943953::1715277202::0::1::::<><>::uid://by4fpjw3bu86u::::res://art/art.png<>res://player/player.gd<>uid://b542fa4myg1px::::res://components/dir_cast.tscn<>uid://c1hxnutbmq3bt::::res://art/light.png<>uid://doh73k3acded4::::res://art/player_light.png
