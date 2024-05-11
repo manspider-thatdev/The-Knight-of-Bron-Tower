@@ -2,8 +2,12 @@ class_name Player
 extends AnimatedSprite2D
 
 
-@onready var dir_cast = $DirCast
-@onready var player_glow = $PlayerGlow
+@onready var cast_dict := {
+	Vector2.DOWN: $RayCasts/DownCast, 
+	Vector2.RIGHT: $RayCasts/RightCast,
+	Vector2.LEFT: $RayCasts/LeftCast,
+	Vector2.UP: $RayCasts/UpCast,
+	}
 
 
 var target_dir := Vector2.ZERO
@@ -41,7 +45,7 @@ func move_inputs() -> Vector2:
 		play("up")
 	
 	# Returns
-	if move_vector == Vector2.ZERO or dir_cast.is_colliding(move_vector): 
+	if move_vector == Vector2.ZERO or cast_dict[move_vector].is_colliding(): 
 		return Vector2.ZERO
 	
 	return move_vector

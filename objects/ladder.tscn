@@ -20,7 +20,8 @@ visible = false
 shape = SubResource("RectangleShape2D_nmfyl")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-light_mask = 2
+light_mask = 4
+visibility_layer = 4
 texture = SubResource("AtlasTexture_ltrge")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

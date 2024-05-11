@@ -2,14 +2,12 @@ extends Sprite2D
 
 
 @onready var wall_cast: DirCast = $WallDirCast
-@onready var p_glow_dir_cast: DirCast = $PlayerDirCast
+@onready var player_cast: DirCast = $PlayerDirCast
 @onready var player_check_area: Area2D = $PlayerCheckArea
-@onready var alert_sprite: Sprite2D = $AlertSprite
 
 
 var target: Vector2
 var post_pos: Vector2
-var tween: Tween
 var dir: Vector2
 
 var move_path: Array[Vector2]
@@ -18,10 +16,10 @@ var end_level := false
 
 
 func _ready():
-	target = global_position
 	post_pos = global_position
 	GameManager.connect("game_turn", _on_game_turn)
 	
+	# Wait is necessary, don't ask why
 	for i in 3:
 		await get_tree().physics_frame
 	set_p_glow_cast()
@@ -29,20 +27,18 @@ func _ready():
 
 func _on_game_turn(turn_time: float):
 	find_target()
-	dir = (target - global_position).normalized() * 16
+	dir = (target - global_position).normalized()
 	
 	if dir != Vector2.ZERO:
-		move_path.push_back(dir * 0.0625)
+		move_path.push_back(dir)
 	elif global_position == target and global_position != post_pos:
-		alert_sprite.visible = false
-		dir = move_path.pop_back() * -16
+		dir = move_path.pop_back() * -1
 		target = dir + global_position
 	
-	tween = create_tween()
-	tween.tween_property(self, "position", dir + global_position, turn_time) # Move Tween
+	var tween = create_tween()
+	tween.tween_property(self, "position", dir * 16, turn_time).set_delay(0.1).as_relative()
 	
 	await tween.finished
-	tween.kill()
 	
 	if end_level: 
 		get_tree().reload_current_scene() # Reset Level
@@ -50,13 +46,13 @@ func _on_game_turn(turn_time: float):
 	if dir:
 		set_p_glow_cast()
 	
-	if p_glow_dir_cast.is_colliding_any():
-		alert_sprite.visible = true
+	if player_cast.is_colliding_any():
+		pass # Become Mad
 
 
 func find_target():
-	var collision_directions: Array[Vector2] = p_glow_dir_cast.get_colliding_directions()
-	var p_glow_bounds: Dictionary = p_glow_dir_cast.get_collision_bounds()
+	var collision_directions: Array[Vector2] = player_cast.get_colliding_directions()
+	var p_glow_bounds: Dictionary = player_cast.get_collision_bounds()
 	
 	for direction in collision_directions:
 		if p_glow_bounds[direction] > 0:
@@ -67,10 +63,10 @@ func find_target():
 
 func set_p_glow_cast():
 	var bound_dict = wall_cast.get_collision_bounds()
-	p_glow_dir_cast.right_length = bound_dict[Vector2.RIGHT] - 8
-	p_glow_dir_cast.down_length = bound_dict[Vector2.DOWN] - 8
-	p_glow_dir_cast.left_length = bound_dict[Vector2.LEFT] - 8
-	p_glow_dir_cast.up_length = bound_dict[Vector2.UP] - 8
+	player_cast.right_length = bound_dict[Vector2.RIGHT] - 8
+	player_cast.down_length = bound_dict[Vector2.DOWN] - 8
+	player_cast.left_length = bound_dict[Vector2.LEFT] - 8
+	player_cast.up_length = bound_dict[Vector2.UP] - 8
 
 
 func _on_player_check_area_entered(_area: Area2D):

@@ -1,9 +1,7 @@
-[gd_scene load_steps=24 format=3 uid="uid://fx5pj0valbvl"]
+[gd_scene load_steps=22 format=3 uid="uid://fx5pj0valbvl"]
 
 [ext_resource type="Texture2D" uid="uid://by4fpjw3bu86u" path="res://art/art.png" id="1_r13f0"]
 [ext_resource type="Script" path="res://player/player.gd" id="2_buhwe"]
-[ext_resource type="PackedScene" uid="uid://b542fa4myg1px" path="res://components/dir_cast.tscn" id="3_7ddl7"]
-[ext_resource type="Texture2D" uid="uid://c1hxnutbmq3bt" path="res://art/light.png" id="4_w2ir0"]
 [ext_resource type="Texture2D" uid="uid://doh73k3acded4" path="res://art/player_light.png" id="5_uo3qf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p2l5d"]
@@ -158,17 +156,23 @@ collision_mask = 0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea"]
 shape = SubResource("RectangleShape2D_fbqlq")
 
-[node name="DirCast" parent="." instance=ExtResource("3_7ddl7")]
+[node name="RayCasts" type="Node2D" parent="."]
+
+[node name="DownCast" type="RayCast2D" parent="RayCasts"]
+target_position = Vector2(0, 16)
 collision_mask = 2
 
-[node name="WorldShadow" type="PointLight2D" parent="."]
-blend_mode = 2
-range_item_cull_mask = 2
-shadow_enabled = true
-shadow_color = Color(0, 0, 0, 0.164706)
-shadow_filter_smooth = 64.0
-texture = ExtResource("4_w2ir0")
-texture_scale = 15.0
+[node name="RightCast" type="RayCast2D" parent="RayCasts"]
+target_position = Vector2(16, 0)
+collision_mask = 2
+
+[node name="LeftCast" type="RayCast2D" parent="RayCasts"]
+target_position = Vector2(-16, 0)
+collision_mask = 2
+
+[node name="UpCast" type="RayCast2D" parent="RayCasts"]
+target_position = Vector2(0, -16)
+collision_mask = 2
 
 [node name="PlayerGlow" type="PointLight2D" parent="."]
 color = Color(0.909804, 0.529412, 0.235294, 1)

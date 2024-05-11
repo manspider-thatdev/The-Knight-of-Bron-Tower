@@ -3,13 +3,10 @@
 [ext_resource type="Texture2D" uid="uid://by4fpjw3bu86u" path="res://art/art.png" id="2_urv17"]
 [ext_resource type="Script" path="res://knight/knight.gd" id="3_bl248"]
 [ext_resource type="PackedScene" uid="uid://b542fa4myg1px" path="res://components/dir_cast.tscn" id="4_2pfc6"]
+[ext_resource type="Texture2D" uid="uid://doh73k3acded4" path="res://art/player_light.png" id="4_an5q4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fbqlq"]
 size = Vector2(8, 8)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sw75s"]
-atlas = ExtResource("2_urv17")
-region = Rect2(32, 32, 16, 16)
 
 [node name="Knight" type="Sprite2D"]
 light_mask = 2
@@ -21,6 +18,7 @@ frame = 16
 script = ExtResource("3_bl248")
 
 [node name="WallDirCast" parent="." instance=ExtResource("4_2pfc6")]
+visible = false
 right_length = 256
 down_length = 256
 left_length = 256
@@ -28,18 +26,23 @@ up_length = 256
 collision_mask = 2
 
 [node name="PlayerDirCast" parent="." instance=ExtResource("4_2pfc6")]
-collision_mask = 4
+visible = false
+collision_mask = 1
 collide_with_areas = true
 collide_with_bodies = false
 
 [node name="PlayerCheckArea" type="Area2D" parent="."]
+visible = false
 collision_layer = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCheckArea"]
 shape = SubResource("RectangleShape2D_fbqlq")
 
-[node name="AlertSprite" type="Sprite2D" parent="."]
-visible = false
-texture = SubResource("AtlasTexture_sw75s")
+[node name="GlowLight" type="PointLight2D" parent="."]
+color = Color(0.909804, 0.529412, 0.235294, 1)
+range_item_cull_mask = 4
+shadow_enabled = true
+shadow_item_cull_mask = 4
+texture = ExtResource("4_an5q4")
 
 [connection signal="area_entered" from="PlayerCheckArea" to="." method="_on_player_check_area_entered"]
