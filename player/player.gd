@@ -15,10 +15,11 @@ func _ready():
 
 
 func _process(_delta):
-	target_dir = move_inputs()
-	if can_move and target_dir != Vector2.ZERO:
-		can_move = false
-		GameManager.emit_signal("game_turn", GameManager.turn_time)
+	if can_move:
+		target_dir = move_inputs()
+		if target_dir != Vector2.ZERO:
+			can_move = false
+			GameManager.emit_signal("game_turn", GameManager.turn_time)
 
 
 func move_inputs() -> Vector2:
@@ -29,6 +30,17 @@ func move_inputs() -> Vector2:
 		move_vector.y = 0
 	move_vector = move_vector.round()
 	
+	# Animations
+	if move_vector == Vector2.LEFT:
+		play("left")
+	elif move_vector == Vector2.RIGHT:
+		play("right")
+	elif move_vector == Vector2.DOWN:
+		play("down")
+	elif move_vector == Vector2.UP:
+		play("up")
+	
+	# Returns
 	if move_vector == Vector2.ZERO or dir_cast.is_colliding(move_vector): 
 		return Vector2.ZERO
 	

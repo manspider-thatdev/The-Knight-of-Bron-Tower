@@ -12,6 +12,7 @@ atlas = ExtResource("2_urv17")
 region = Rect2(32, 32, 16, 16)
 
 [node name="Knight" type="Sprite2D"]
+light_mask = 2
 z_index = 2
 texture = ExtResource("2_urv17")
 hframes = 16
