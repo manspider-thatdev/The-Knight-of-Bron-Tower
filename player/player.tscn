@@ -161,13 +161,6 @@ shape = SubResource("RectangleShape2D_fbqlq")
 [node name="DirCast" parent="." instance=ExtResource("3_7ddl7")]
 collision_mask = 2
 
-[node name="VisibilityLight" type="PointLight2D" parent="."]
-blend_mode = 2
-shadow_enabled = true
-shadow_filter_smooth = 4.0
-texture = ExtResource("4_w2ir0")
-texture_scale = 10.0
-
 [node name="WorldShadow" type="PointLight2D" parent="."]
 blend_mode = 2
 range_item_cull_mask = 2

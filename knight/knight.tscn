@@ -1,12 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://cuqbisxr24jd0"]
+[gd_scene load_steps=6 format=3 uid="uid://cuqbisxr24jd0"]
 
-[ext_resource type="Shader" path="res://art/visibility.gdshader" id="1_csxna"]
 [ext_resource type="Texture2D" uid="uid://by4fpjw3bu86u" path="res://art/art.png" id="2_urv17"]
 [ext_resource type="Script" path="res://knight/knight.gd" id="3_bl248"]
 [ext_resource type="PackedScene" uid="uid://b542fa4myg1px" path="res://components/dir_cast.tscn" id="4_2pfc6"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_ektit"]
-shader = ExtResource("1_csxna")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fbqlq"]
 size = Vector2(8, 8)
@@ -17,7 +13,6 @@ region = Rect2(32, 32, 16, 16)
 
 [node name="Knight" type="Sprite2D"]
 z_index = 2
-material = SubResource("ShaderMaterial_ektit")
 texture = ExtResource("2_urv17")
 hframes = 16
 vframes = 16

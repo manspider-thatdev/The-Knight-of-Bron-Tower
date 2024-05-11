@@ -4,52 +4,40 @@ extends AnimatedSprite2D
 
 @onready var dir_cast = $DirCast
 @onready var player_glow = $PlayerGlow
-@onready var glow_area = $GlowArea
 
 
-var tween: Tween
-var target: Vector2
-var glow_energy := true
+var target_dir := Vector2.ZERO
+var can_move := true
 
 
 func _ready():
-	target = position
 	GameManager.connect("game_turn", _on_game_turn)
 
 
 func _process(_delta):
-	if not (false if not tween else tween.is_valid()) and (glow_inputs() or move_inputs()):
+	target_dir = move_inputs()
+	if can_move and target_dir != Vector2.ZERO:
+		can_move = false
 		GameManager.emit_signal("game_turn", GameManager.turn_time)
 
 
-func glow_inputs() -> bool:
-	if not Input.is_action_just_pressed("ui_accept"):
-		return false
+func move_inputs() -> Vector2:
+	var move_vector: Vector2 = Input.get_vector("left", "right", "up", "down")
 	
-	glow_energy = !glow_energy
-	return true
-
-
-func move_inputs() -> bool:
-	var move_vector: Vector2 = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	
+	# Gives move direction
 	if move_vector.x != 0:
 		move_vector.y = 0
-	move_vector = move_vector.normalized()
+	move_vector = move_vector.round()
 	
 	if move_vector == Vector2.ZERO or dir_cast.is_colliding(move_vector): 
-		return false
+		return Vector2.ZERO
 	
-	target = position + (move_vector * 16)
-	return true
+	return move_vector
 
 
 func _on_game_turn(turn_time):
-	tween = create_tween()
-	tween.tween_property(player_glow, "energy", int(glow_energy), turn_time) # Glow Tween
-	for area in glow_area.get_children():
-		tween.parallel().tween_property(area, "disabled", !glow_energy, turn_time) # Area Tween
-	tween.parallel().tween_property(self, "position", target, turn_time) # Move Tween
+	var tween = create_tween()
+	tween.tween_property(self, "position", target_dir * 16, turn_time).as_relative() # Move Tween
 	
 	await tween.finished
-	tween.kill()
+	can_move = true
