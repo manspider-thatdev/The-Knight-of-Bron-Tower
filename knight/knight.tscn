@@ -16,26 +16,20 @@ vframes = 16
 frame = 16
 script = ExtResource("3_bl248")
 
-[node name="WallDirCast" type="Node2D" parent="."]
-visible = false
+[node name="RayCasts" type="Node2D" parent="."]
 
-[node name="DownCast" type="RayCast2D" parent="WallDirCast"]
+[node name="ForwardCast" type="RayCast2D" parent="RayCasts"]
 target_position = Vector2(0, 256)
 collision_mask = 3
 collide_with_areas = true
 
-[node name="RightCast" type="RayCast2D" parent="WallDirCast"]
+[node name="RightCast" type="RayCast2D" parent="RayCasts"]
 target_position = Vector2(256, 0)
 collision_mask = 3
 collide_with_areas = true
 
-[node name="LeftCast" type="RayCast2D" parent="WallDirCast"]
+[node name="LeftCast" type="RayCast2D" parent="RayCasts"]
 target_position = Vector2(-256, 0)
-collision_mask = 3
-collide_with_areas = true
-
-[node name="UpCast" type="RayCast2D" parent="WallDirCast"]
-target_position = Vector2(0, -256)
 collision_mask = 3
 collide_with_areas = true
 

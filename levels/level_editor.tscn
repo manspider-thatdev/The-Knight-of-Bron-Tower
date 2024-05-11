@@ -9,6 +9,7 @@
 scenes/1/scene = ExtResource("1_2byca")
 scenes/2/scene = ExtResource("2_ggdts")
 scenes/3/scene = ExtResource("3_atpjl")
+scenes/4/scene = ExtResource("1_2byca")
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_44ulf"]
 polygon = PackedVector2Array(-4, -8, 4, -8, 4, -4, 8, -4, 8, 4, 4, 4, 4, 8, -4, 8, -4, 4, -8, 4, -8, -4, -4, -4)
