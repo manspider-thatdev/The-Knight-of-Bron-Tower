@@ -1,4 +1,3 @@
-class_name Player
 extends AnimatedSprite2D
 
 
@@ -10,7 +9,7 @@ extends AnimatedSprite2D
 	}
 
 
-var target_dir := Vector2.ZERO
+var target_direction := Vector2.ZERO
 var can_move := true
 
 
@@ -20,8 +19,8 @@ func _ready():
 
 func _process(_delta):
 	if can_move:
-		target_dir = move_inputs()
-		if target_dir != Vector2.ZERO:
+		target_direction = move_inputs()
+		if target_direction != Vector2.ZERO:
 			can_move = false
 			GameManager.emit_signal("game_turn", GameManager.turn_time)
 
@@ -51,9 +50,10 @@ func move_inputs() -> Vector2:
 	return move_vector
 
 
-func _on_game_turn(turn_time):
-	var tween = create_tween()
-	tween.tween_property(self, "position", target_dir * 16, turn_time).as_relative() # Move Tween
+func _on_game_turn(turn_time: float):
+	var tween: Tween = create_tween()
+	tween.tween_property(self, "position", target_direction * 16, turn_time)\
+	.as_relative()
 	
 	await tween.finished
 	can_move = true

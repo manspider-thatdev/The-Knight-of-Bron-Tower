@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://cuqbisxr24jd0"]
+[gd_scene load_steps=5 format=3 uid="uid://cuqbisxr24jd0"]
 
 [ext_resource type="Texture2D" uid="uid://by4fpjw3bu86u" path="res://art/art.png" id="2_urv17"]
 [ext_resource type="Script" path="res://knight/knight.gd" id="3_bl248"]
-[ext_resource type="PackedScene" uid="uid://b542fa4myg1px" path="res://components/dir_cast.tscn" id="4_2pfc6"]
 [ext_resource type="Texture2D" uid="uid://doh73k3acded4" path="res://art/player_light.png" id="4_an5q4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fbqlq"]
@@ -17,19 +16,28 @@ vframes = 16
 frame = 16
 script = ExtResource("3_bl248")
 
-[node name="WallDirCast" parent="." instance=ExtResource("4_2pfc6")]
+[node name="WallDirCast" type="Node2D" parent="."]
 visible = false
-right_length = 256
-down_length = 256
-left_length = 256
-up_length = 256
-collision_mask = 2
 
-[node name="PlayerDirCast" parent="." instance=ExtResource("4_2pfc6")]
-visible = false
-collision_mask = 1
+[node name="DownCast" type="RayCast2D" parent="WallDirCast"]
+target_position = Vector2(0, 256)
+collision_mask = 3
 collide_with_areas = true
-collide_with_bodies = false
+
+[node name="RightCast" type="RayCast2D" parent="WallDirCast"]
+target_position = Vector2(256, 0)
+collision_mask = 3
+collide_with_areas = true
+
+[node name="LeftCast" type="RayCast2D" parent="WallDirCast"]
+target_position = Vector2(-256, 0)
+collision_mask = 3
+collide_with_areas = true
+
+[node name="UpCast" type="RayCast2D" parent="WallDirCast"]
+target_position = Vector2(0, -256)
+collision_mask = 3
+collide_with_areas = true
 
 [node name="PlayerCheckArea" type="Area2D" parent="."]
 visible = false
