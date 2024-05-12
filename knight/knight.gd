@@ -1,4 +1,4 @@
-extends Sprite2D
+extends AnimatedSprite2D
 
 
 enum TargetType {
@@ -45,7 +45,16 @@ func _on_game_turn(turn_time: float):
 		raycasts[1].target_position = ortho_vector * 256
 		raycasts[2].target_position = -ortho_vector * 256
 	
-	# Set animations
+	# Set animations for direction
+	var animation_suffix = animation.get_slice("_", 1)
+	if target_direction == Vector2.LEFT:
+		play("left_" + animation_suffix)
+	elif target_direction == Vector2.RIGHT:
+		play("right_" + animation_suffix)
+	elif target_direction == Vector2.DOWN:
+		play("down_" + animation_suffix)
+	elif target_direction == Vector2.UP:
+		play("up_" + animation_suffix)
 	
 	var tween: Tween = create_tween()
 	tween.tween_property(self, "position", target_direction * 16, turn_time)\
@@ -57,7 +66,6 @@ func _on_game_turn(turn_time: float):
 		get_tree().reload_current_scene() # Reset Level
 	
 	set_target()
-	print(target_direction, target_type, target)
 
 
 func set_target():
@@ -78,7 +86,10 @@ func set_target():
 	if target_type == TargetType.POST:
 		target = post_positions[post_index]
 	
-	# Somethin' with animations here
+	# Animation mad to calm or calm to mad
+	var animation_prefix = animation.get_slice("_", 0)
+	var animation_suffix := "calm" if target_type == TargetType.POST else "mad"
+	play(animation_prefix + "_" + animation_suffix)
 
 
 # Used to wait for end of turn to end level

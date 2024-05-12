@@ -1,2 +1,9 @@
 res://knight/knight.tscn
 res://art/visibility.gdshader
+res://knight/knight.gd
+res://main.tscn
+res://components/dir_cast.tscn
+res://objects/ladder.tscn
+res://player/player.tscn
+res://levels/level_editor.tscn
+res://levels/level_1.tscn

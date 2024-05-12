@@ -78,7 +78,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_3u1nx")
 }],
 "loop": true,
-"name": &"down",
+"name": &"down_calm",
 "speed": 1.5
 }, {
 "frames": [{
@@ -100,7 +100,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_8wgdd")
 }],
 "loop": true,
-"name": &"left",
+"name": &"left_calm",
 "speed": 1.5
 }, {
 "frames": [{
@@ -122,7 +122,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_odmxy")
 }],
 "loop": true,
-"name": &"right",
+"name": &"right_calm",
 "speed": 1.5
 }, {
 "frames": [{
@@ -144,7 +144,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_e54ct")
 }],
 "loop": true,
-"name": &"up",
+"name": &"up_calm",
 "speed": 1.5
 }, {
 "frames": [{
@@ -166,9 +166,9 @@ size = Vector2(8, 8)
 light_mask = 2
 z_index = 2
 sprite_frames = SubResource("SpriteFrames_anvie")
-animation = &"down"
-autoplay = "down"
-frame_progress = 0.821452
+animation = &"up_calm"
+autoplay = "down_calm"
+frame_progress = 0.939672
 script = ExtResource("3_bl248")
 
 [node name="RayCasts" type="Node2D" parent="."]
