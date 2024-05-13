@@ -14,21 +14,21 @@ enum Direction { LEFT, RIGHT, DOWN, UP }
 	$RayCasts/RightCast,
 	]
 
-@export var default_direction := Direction.DOWN:
+@export var default_face := Direction.DOWN:
 	set(value):
-		default_direction = value
+		default_face = value
 		if value == Direction.LEFT:
-			default_vector = Vector2.LEFT
+			default_direction = Vector2.LEFT
 		elif value == Direction.RIGHT:
-			default_vector = Vector2.RIGHT
+			default_direction = Vector2.RIGHT
 		elif value == Direction.DOWN:
-			default_vector = Vector2.DOWN
+			default_direction = Vector2.DOWN
 		elif value == Direction.UP:
-			default_vector = Vector2.UP
+			default_direction = Vector2.UP
 @export var post_positions: Array[Vector2]
 
 
-var default_vector: Vector2
+var default_direction: Vector2
 var post_index: int = 0:
 	set(value):
 		post_index = wrapi(post_index, 0, post_positions.size())
@@ -47,14 +47,7 @@ func _ready():
 	post_index += 1
 	target = post_positions[post_index]
 	
-	if default_direction == Direction.LEFT:
-		play("left_calm")
-	elif default_direction == Direction.RIGHT:
-		play("right_calm")
-	elif default_direction == Direction.DOWN:
-		play("down_calm")
-	elif default_direction == Direction.UP:
-		play("up_calm")
+	set_animation_direction(default_direction)
 
 
 func _on_game_turn(turn_time: float):
@@ -62,31 +55,13 @@ func _on_game_turn(turn_time: float):
 	
 	if target_direction != Vector2.ZERO:
 		target_direction = target_direction.normalized()
-		var ortho_vector := target_direction.orthogonal()
-		
-		raycasts[0].target_position = target_direction * 256
-		raycasts[1].target_position = ortho_vector * 256
-		raycasts[2].target_position = -ortho_vector * 256
+		set_raycasts(target_direction)
 	else:
-		var ortho_vector := default_vector.orthogonal()
-		
-		raycasts[0].target_position = default_vector * 256
-		raycasts[1].target_position = ortho_vector * 256
-		raycasts[2].target_position = -ortho_vector * 256
+		set_raycasts(default_direction)
 	
 	# Set animations for direction
-	
 	var animation_suffix := animation.get_slice("_", 1)
-	if target_direction == Vector2.LEFT:
-		play("left_" + animation_suffix)
-	elif target_direction == Vector2.RIGHT:
-		play("right_" + animation_suffix)
-	elif target_direction == Vector2.DOWN:
-		play("down_" + animation_suffix)
-	elif target_direction == Vector2.UP:
-		play("up_" + animation_suffix)
-	else:
-		play(str(Direction.keys()[default_direction]).to_lower() + "_" + animation_suffix)
+	set_animation_direction(target_direction, animation_suffix)
 	
 	var tween: Tween = create_tween()
 	tween.tween_property(self, "position", target_direction * 16, turn_time)\
@@ -123,6 +98,27 @@ func set_target():
 	
 	if target_type == TargetType.POST:
 		target = post_positions[post_index]
+
+
+func set_raycasts(direction: Vector2):
+	var ortho_vector := direction.orthogonal()
+	
+	raycasts[0].target_position = direction * 256
+	raycasts[1].target_position = ortho_vector * 256
+	raycasts[2].target_position = -ortho_vector * 256
+
+
+func set_animation_direction(direction: Vector2, suffix := "calm"):
+	if direction == Vector2.LEFT:
+		play("left_" + suffix)
+	elif direction == Vector2.RIGHT:
+		play("right_" + suffix)
+	elif direction == Vector2.DOWN:
+		play("down_" + suffix)
+	elif direction == Vector2.UP:
+		play("up_" + suffix)
+	else:
+		play(str(Direction.keys()[default_face]).to_lower() + "_" + suffix)
 
 
 # Used to wait for end of turn to end level
