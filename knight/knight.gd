@@ -37,6 +37,8 @@ var target: Vector2
 var target_direction: Vector2
 var target_type: TargetType
 
+var can_teleport := false
+
 var end_level := false
 
 
@@ -59,15 +61,22 @@ func _on_game_turn(turn_time: float):
 	else:
 		set_raycasts(default_direction)
 	
-	# Set animations for direction
 	var animation_suffix := animation.get_slice("_", 1)
-	set_animation_direction(target_direction, animation_suffix)
-	
 	var tween: Tween = create_tween()
-	tween.tween_property(self, "position", target_direction * 16, turn_time)\
-	.as_relative()
+	if can_teleport:
+		can_teleport = false
+		tween.tween_property(self, "modulate", Color.TRANSPARENT, turn_time * 0.5)
+		tween.tween_property(self, "modulate", Color.WHITE, turn_time * 0.5)
+		await tween.step_finished
+		
+		global_position = target
+		set_animation_direction(default_direction, "calm") # Only works for one post
+	else:
+		tween.tween_property(self, "position", target_direction * 16, turn_time)\
+		.as_relative()
 	
-	# Wait to be done moving
+		set_animation_direction(target_direction, animation_suffix)
+	
 	await tween.finished
 	
 	if end_level: 
@@ -85,6 +94,9 @@ func set_target():
 	if global_position == target:
 		if target_type == TargetType.POST:
 			post_index += 1
+		else:
+			post_index -= 1
+			can_teleport = true
 		target_type = TargetType.POST
 	
 	for raycast in raycasts:
@@ -98,6 +110,8 @@ func set_target():
 	
 	if target_type == TargetType.POST:
 		target = post_positions[post_index]
+	else:
+		can_teleport = false
 
 
 func set_raycasts(direction: Vector2):

@@ -167,7 +167,7 @@ light_mask = 2
 z_index = 2
 sprite_frames = SubResource("SpriteFrames_anvie")
 animation = &"down_calm"
-frame_progress = 0.244571
+frame_progress = 0.49616
 script = ExtResource("3_bl248")
 
 [node name="RayCasts" type="Node2D" parent="."]
