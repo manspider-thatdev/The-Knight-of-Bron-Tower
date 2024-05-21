@@ -55,8 +55,6 @@ func _ready():
 
 func _on_game_turn(turn_time: float):
 	target_direction = target - global_position
-	if target_direction != Vector2.ZERO:
-		target_direction = target_direction.normalized()
 	
 	var animation_suffix := animation.get_slice("_", 1)
 	var tween: Tween = create_tween()
@@ -73,14 +71,17 @@ func _on_game_turn(turn_time: float):
 			face_direction = target.direction_to(post_positions[post_index])
 			post_index -= 1
 		
-		set_animation_direction(face_direction, "calm") # Only works for one post
+		set_animation_direction(face_direction, "calm")
 		set_raycasts(face_direction)
-	else:
+	elif target_direction != Vector2.ZERO:
+		target_direction = target_direction.normalized()
 		tween.tween_property(self, "position", target_direction * 16, turn_time)\
 		.as_relative()
 		
 		set_animation_direction(target_direction, animation_suffix)
 		set_raycasts(target_direction)
+	else:
+		tween.tween_interval(turn_time)
 	
 	await tween.finished
 	

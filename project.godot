@@ -89,9 +89,8 @@ stay={
 
 [layer_names]
 
-2d_render/layer_1="PlayerView"
-2d_render/layer_2="VisibleTiles"
-2d_render/layer_3="LightEffects"
+2d_render/layer_2="Tiles"
+2d_render/layer_3="Objects"
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Wall"
 2d_physics/layer_3="Knight"

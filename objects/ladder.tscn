@@ -1,10 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://ckl1ls5bva2gs"]
+[gd_scene load_steps=7 format=3 uid="uid://ckl1ls5bva2gs"]
 
+[ext_resource type="Shader" path="res://art/visibility.gdshader" id="1_fjmwr"]
 [ext_resource type="Script" path="res://objects/ladder.gd" id="1_kn8fr"]
 [ext_resource type="Texture2D" uid="uid://by4fpjw3bu86u" path="res://art/art.png" id="2_u6qir"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nmfyl"]
 size = Vector2(8, 8)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ev5jl"]
+shader = ExtResource("1_fjmwr")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ltrge"]
 atlas = ExtResource("2_u6qir")
@@ -22,6 +26,7 @@ shape = SubResource("RectangleShape2D_nmfyl")
 [node name="Sprite2D" type="Sprite2D" parent="."]
 light_mask = 4
 visibility_layer = 4
+material = SubResource("ShaderMaterial_ev5jl")
 texture = SubResource("AtlasTexture_ltrge")
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
