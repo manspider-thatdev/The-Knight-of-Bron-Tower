@@ -94,7 +94,7 @@ stay={
 2d_render/layer_3="LightEffects"
 2d_physics/layer_1="Player"
 2d_physics/layer_2="Wall"
-2d_physics/layer_3="PlayerGlow"
+2d_physics/layer_3="Knight"
 
 [rendering]
 

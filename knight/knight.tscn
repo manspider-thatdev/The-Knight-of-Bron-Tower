@@ -187,11 +187,11 @@ target_position = Vector2(-256, 0)
 collision_mask = 3
 collide_with_areas = true
 
-[node name="PlayerCheckArea" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="."]
 visible = false
-collision_layer = 0
+collision_layer = 4
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerCheckArea"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("RectangleShape2D_fbqlq")
 
 [node name="GlowLight" type="PointLight2D" parent="."]
@@ -201,4 +201,4 @@ shadow_enabled = true
 shadow_item_cull_mask = 4
 texture = ExtResource("4_an5q4")
 
-[connection signal="area_entered" from="PlayerCheckArea" to="." method="_on_player_check_area_entered"]
+[connection signal="area_entered" from="Area2D" to="." method="_on_player_check_area_entered"]
