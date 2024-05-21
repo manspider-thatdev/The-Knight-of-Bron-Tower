@@ -31,7 +31,7 @@ enum Direction { LEFT, RIGHT, DOWN, UP }
 var default_direction: Vector2
 var post_index: int = 0:
 	set(value):
-		post_index = wrapi(post_index, 0, post_positions.size())
+		post_index = wrapi(value, 0, post_positions.size())
 
 var target: Vector2
 var target_direction: Vector2
@@ -45,21 +45,18 @@ var end_level := false
 func _ready():
 	GameManager.connect("game_turn", _on_game_turn)
 	
-	global_position = post_positions[post_index]
+	global_position = post_positions[0]
 	post_index += 1
 	target = post_positions[post_index]
 	
 	set_animation_direction(default_direction)
+	set_raycasts(default_direction)
 
 
 func _on_game_turn(turn_time: float):
 	target_direction = target - global_position
-	
 	if target_direction != Vector2.ZERO:
 		target_direction = target_direction.normalized()
-		set_raycasts(target_direction)
-	else:
-		set_raycasts(default_direction)
 	
 	var animation_suffix := animation.get_slice("_", 1)
 	var tween: Tween = create_tween()
@@ -70,12 +67,20 @@ func _on_game_turn(turn_time: float):
 		await tween.step_finished
 		
 		global_position = target
-		set_animation_direction(default_direction, "calm") # Only works for one post
+		var face_direction := default_direction
+		if post_positions.size() > 1:
+			post_index += 1
+			face_direction = target.direction_to(post_positions[post_index])
+			post_index -= 1
+		
+		set_animation_direction(face_direction, "calm") # Only works for one post
+		set_raycasts(face_direction)
 	else:
 		tween.tween_property(self, "position", target_direction * 16, turn_time)\
 		.as_relative()
-	
+		
 		set_animation_direction(target_direction, animation_suffix)
+		set_raycasts(target_direction)
 	
 	await tween.finished
 	

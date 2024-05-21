@@ -20,7 +20,7 @@ func _ready():
 func _process(_delta):
 	if can_move:
 		target_direction = move_inputs()
-		if target_direction != Vector2.ZERO:
+		if Input.is_action_pressed("stay") or target_direction != Vector2.ZERO:
 			can_move = false
 			GameManager.emit_signal("game_turn", GameManager.turn_time)
 
