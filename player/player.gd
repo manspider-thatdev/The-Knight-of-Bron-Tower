@@ -11,6 +11,7 @@ extends AnimatedSprite2D
 
 var target_direction := Vector2.ZERO
 var can_move := true
+var advance_game := false
 
 
 func _ready():
@@ -20,13 +21,16 @@ func _ready():
 func _process(_delta):
 	if can_move:
 		target_direction = move_inputs()
-		if Input.is_action_pressed("stay") or target_direction != Vector2.ZERO:
+		if advance_game:
 			can_move = false
+			advance_game = false
 			GameManager.emit_signal("game_turn", GameManager.turn_time)
 
 
 func move_inputs() -> Vector2:
 	var move_vector: Vector2 = Input.get_vector("left", "right", "up", "down")
+	if move_vector != Vector2.ZERO or Input.is_action_pressed("stay"):
+		advance_game = true
 	
 	# Gives move direction
 	if move_vector.x != 0:
