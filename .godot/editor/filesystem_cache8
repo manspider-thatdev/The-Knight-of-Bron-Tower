@@ -2,8 +2,8 @@ ea4bc82a6ad023ab7ee23ee620429895
 ::res://::1716327236
 icon.svg::CompressedTexture2D::1845387245217874012::1707843354::1707843359::1::::<><>::
 main.tscn::PackedScene::5035942929001725333::1716327236::0::1::::<><>::uid://mnfui48wfg37::::res://levels/level_editor.tscn<>uid://ckl1ls5bva2gs::::res://objects/ladder.tscn<>uid://fx5pj0valbvl::::res://player/player.tscn<>uid://cuqbisxr24jd0::::res://knight/knight.tscn
-::res://art/::1716327631
-art.png::CompressedTexture2D::4131150765716219494::1715540735::1715542974::1::::<><>::
+::res://art/::1716328202
+art.png::CompressedTexture2D::4131150765716219494::1716328212::1716328256::1::::<><>::
 light.png::CompressedTexture2D::6613622732288274373::1708217785::1708217786::1::::<><>::
 player_light.png::CompressedTexture2D::8158350020778859339::1716327642::1716327644::1::::<><>::
 visibility.gdshader::Shader::-1::1716327236::0::1::::<><>::
