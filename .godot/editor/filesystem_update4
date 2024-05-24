@@ -9,3 +9,7 @@ res://player/player.tscn
 res://knight/knight.tscn
 res://levels/level_editor.tscn
 res://player/player.gd
+res://objects/lantern_up.tscn
+res://objects/lantern_down.tscn
+res://objects/lantern_left.tscn
+res://objects/lantern_right.tscn

@@ -1,13 +1,13 @@
+PointLight2D
+Node2D
+Sprite2D
 AnimatedSprite2D
 DirectionalLight2D
-PointLight2D
-Sprite2D
 Camera2D
 CollisionShape2D
 Area2D
 NavigationAgent2D
 DirCast
-Node2D
 CollisionPolygon2D
 LightOccluder2D
 RayCast2D

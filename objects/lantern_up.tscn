@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://brkkrhmwyk6w5"]
+
+[ext_resource type="Texture2D" uid="uid://by4fpjw3bu86u" path="res://art/art.png" id="1_vh3kp"]
+[ext_resource type="Texture2D" uid="uid://doh73k3acded4" path="res://art/player_light.png" id="2_glcpm"]
+
+[node name="LanternUp" type="Node2D"]
+position = Vector2(0, -9)
+rotation = 3.14159
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 0
+texture = ExtResource("1_vh3kp")
+hframes = 16
+vframes = 16
+frame = 38
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+color = Color(0.905882, 0.529412, 0.239216, 1)
+range_item_cull_mask = 6
+texture = ExtResource("2_glcpm")
