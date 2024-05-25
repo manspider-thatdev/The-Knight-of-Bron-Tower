@@ -682,5 +682,3 @@ layer_3/tile_data = PackedInt32Array(262156, 0, 327680)
 position = Vector2(168, 56)
 default_face = 0
 post_positions = Array[Vector2]([Vector2(168, 56), Vector2(120, 56), Vector2(120, 104), Vector2(168, 104)])
-
-[connection signal="area_entered" from="@Area2D@108089" to="@Area2D@108089" method="_on_area_entered"]

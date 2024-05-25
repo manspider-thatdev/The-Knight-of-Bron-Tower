@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=3 uid="uid://bmuhxbajo6s3w"]
+
+[ext_resource type="Script" path="res://objects/key.gd" id="1_if3nt"]
+[ext_resource type="Shader" path="res://art/visibility.gdshader" id="1_ktpn3"]
+[ext_resource type="Texture2D" uid="uid://by4fpjw3bu86u" path="res://art/art.png" id="1_ugeqj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wpexo"]
+shader = ExtResource("1_ktpn3")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s35eu"]
+size = Vector2(8, 8)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_vtorm"]
+shader = ExtResource("1_ktpn3")
+
+[node name="Key" type="Area2D"]
+light_mask = 4
+material = SubResource("ShaderMaterial_wpexo")
+collision_layer = 8
+script = ExtResource("1_if3nt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_s35eu")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 4
+material = SubResource("ShaderMaterial_vtorm")
+texture = ExtResource("1_ugeqj")
+hframes = 16
+vframes = 16
+frame = 35
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

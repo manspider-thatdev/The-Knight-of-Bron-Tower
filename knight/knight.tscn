@@ -169,22 +169,23 @@ sprite_frames = SubResource("SpriteFrames_anvie")
 animation = &"down_calm"
 frame_progress = 0.49616
 script = ExtResource("3_bl248")
+door_layer = 16
 
 [node name="RayCasts" type="Node2D" parent="."]
 
 [node name="ForwardCast" type="RayCast2D" parent="RayCasts"]
 target_position = Vector2(0, 256)
-collision_mask = 3
+collision_mask = 19
 collide_with_areas = true
 
 [node name="RightCast" type="RayCast2D" parent="RayCasts"]
 target_position = Vector2(256, 0)
-collision_mask = 3
+collision_mask = 19
 collide_with_areas = true
 
 [node name="LeftCast" type="RayCast2D" parent="RayCasts"]
 target_position = Vector2(-256, 0)
-collision_mask = 3
+collision_mask = 19
 collide_with_areas = true
 
 [node name="Area2D" type="Area2D" parent="."]

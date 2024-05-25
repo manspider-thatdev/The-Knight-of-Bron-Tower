@@ -14,6 +14,7 @@ enum Direction { LEFT, RIGHT, DOWN, UP }
 	$RayCasts/RightCast,
 	]
 
+@export_flags_2d_physics var door_layer: int
 @export var default_face := Direction.DOWN:
 	set(value):
 		default_face = value
@@ -28,7 +29,7 @@ enum Direction { LEFT, RIGHT, DOWN, UP }
 @export var post_positions: Array[Vector2]
 
 
-var default_direction: Vector2
+var default_direction := Vector2.DOWN 
 var post_index: int = 0:
 	set(value):
 		post_index = wrapi(value, 0, post_positions.size())
@@ -84,6 +85,7 @@ func _on_game_turn(turn_time: float):
 		tween.tween_interval(turn_time)
 	
 	await tween.finished
+	global_position = global_position.round()
 	
 	if end_level: 
 		get_tree().reload_current_scene() # Reset Level
@@ -107,7 +109,7 @@ func set_target():
 	
 	for raycast in raycasts:
 		var collider: Node2D = raycast.get_collider()
-		if !collider or collider.get_class() == "TileMap":
+		if !collider or collider is TileMap or collider.collision_layer == door_layer:
 			continue
 		
 		# Sees Player

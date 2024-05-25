@@ -8,9 +8,13 @@ extends AnimatedSprite2D
 	Vector2.UP: $RayCasts/UpCast,
 	}
 
+@export_flags_2d_physics var key_layer: int
+@export_flags_2d_physics var door_layer: int
+
 
 var target_direction := Vector2.ZERO
 var can_move := true
+var key_count := 0
 var advance_game := false
 
 
@@ -47,17 +51,28 @@ func move_inputs() -> Vector2:
 	elif move_vector == Vector2.UP:
 		play("up")
 	
-	# Returns
-	if move_vector == Vector2.ZERO or cast_dict[move_vector].is_colliding(): 
-		return Vector2.ZERO
 	
+	if move_vector == Vector2.ZERO:
+		return move_vector
+	
+	if cast_dict[move_vector].is_colliding():
+		var collider = cast_dict[move_vector].get_collider()
+		if collider is TileMap or key_count == 0 or collider.collision_layer != door_layer:
+			return Vector2.ZERO
+		key_count -= 1
 	return move_vector
 
 
 func _on_game_turn(turn_time: float):
 	var tween: Tween = create_tween()
-	tween.tween_property(self, "position", target_direction * 16, turn_time)\
+	tween.tween_property(self, "position", target_direction * 16.0, turn_time)\
 	.as_relative()
 	
 	await tween.finished
+	global_position = global_position.round()
 	can_move = true
+
+
+func _on_player_area_entered(area: Area2D):
+	if area.collision_layer == key_layer:
+		key_count += 1
