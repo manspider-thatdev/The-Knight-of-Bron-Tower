@@ -1,0 +1,81 @@
+[gd_scene load_steps=10 format=3 uid="uid://bmpeq2r4s6f4l"]
+
+[ext_resource type="Script" path="res://objects/firepit.gd" id="1_jovwb"]
+[ext_resource type="Texture2D" uid="uid://by4fpjw3bu86u" path="res://art/art.png" id="1_orfl4"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_34n0n"]
+size = Vector2(14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oqhct"]
+atlas = ExtResource("1_orfl4")
+region = Rect2(160, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fihqd"]
+atlas = ExtResource("1_orfl4")
+region = Rect2(144, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g0j3n"]
+atlas = ExtResource("1_orfl4")
+region = Rect2(176, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xj13q"]
+atlas = ExtResource("1_orfl4")
+region = Rect2(192, 32, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ps2fl"]
+atlas = ExtResource("1_orfl4")
+region = Rect2(128, 32, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ret1b"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqhct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fihqd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0j3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fihqd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xj13q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g0j3n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oqhct")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xj13q")
+}],
+"loop": true,
+"name": &"lit",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ps2fl")
+}],
+"loop": true,
+"name": &"unlit",
+"speed": 10.0
+}]
+
+[node name="Firepit" type="Area2D"]
+collision_layer = 32
+collision_mask = 0
+script = ExtResource("1_jovwb")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_34n0n")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_ret1b")
+animation = &"unlit"
+autoplay = "unlit"
+frame_progress = 0.362236

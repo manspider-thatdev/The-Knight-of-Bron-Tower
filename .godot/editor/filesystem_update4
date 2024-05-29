@@ -18,3 +18,5 @@ res://objects/key.gd
 res://objects/door.tscn
 res://levels/level_3.tscn
 res://objects/door.gd
+res://objects/firepit.tscn
+res://objects/firepit.gd

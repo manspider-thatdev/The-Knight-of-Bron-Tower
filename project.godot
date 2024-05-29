@@ -96,6 +96,8 @@ stay={
 2d_physics/layer_3="Knight"
 2d_physics/layer_4="Key"
 2d_physics/layer_5="Door"
+2d_physics/layer_6="Pit"
+2d_physics/layer_7="Fire"
 
 [rendering]
 

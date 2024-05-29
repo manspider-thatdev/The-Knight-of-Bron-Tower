@@ -1,10 +1,10 @@
-LightOccluder2D
-Sprite2D
+AnimatedSprite2D
 CollisionShape2D
 Area2D
+LightOccluder2D
+Sprite2D
 PointLight2D
 Node2D
-AnimatedSprite2D
 DirectionalLight2D
 Camera2D
 NavigationAgent2D
