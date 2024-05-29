@@ -8,6 +8,11 @@ extends Area2D
 @export_flags_2d_physics var lit_layer = 64
 
 
+func _ready():
+	if is_lit:
+		ignite()
+
+
 func ignite():
 	is_lit = true
 	collision_layer = lit_layer

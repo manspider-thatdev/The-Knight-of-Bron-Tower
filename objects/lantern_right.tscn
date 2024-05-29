@@ -17,4 +17,6 @@ frame = 38
 [node name="PointLight2D" type="PointLight2D" parent="."]
 color = Color(0.909804, 0.529412, 0.235294, 1)
 range_item_cull_mask = 6
+shadow_enabled = true
+shadow_item_cull_mask = 6
 texture = ExtResource("2_is0uo")

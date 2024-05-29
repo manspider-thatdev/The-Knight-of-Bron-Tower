@@ -15,7 +15,3 @@ post_positions = Array[Vector2]([Vector2(88, 56)])
 [node name="Knight2" parent="." index="1" instance=ExtResource("2_k7nx2")]
 position = Vector2(200, 56)
 post_positions = Array[Vector2]([Vector2(200, 56)])
-
-[connection signal="area_entered" from="Key" to="Key" method="_on_area_entered"]
-[connection signal="area_entered" from="Ladder" to="Ladder" method="_on_area_entered"]
-[connection signal="area_entered" from="Door" to="Door" method="_on_area_entered"]

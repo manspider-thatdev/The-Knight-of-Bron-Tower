@@ -75,7 +75,8 @@ script = ExtResource("1_jovwb")
 shape = SubResource("RectangleShape2D_34n0n")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+light_mask = 5
 sprite_frames = SubResource("SpriteFrames_ret1b")
 animation = &"unlit"
 autoplay = "unlit"
-frame_progress = 0.362236
+frame_progress = 0.534386

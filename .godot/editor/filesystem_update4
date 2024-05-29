@@ -20,3 +20,4 @@ res://levels/level_3.tscn
 res://objects/door.gd
 res://objects/firepit.tscn
 res://objects/firepit.gd
+res://levels/level_4.tscn
