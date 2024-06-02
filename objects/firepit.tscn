@@ -79,4 +79,4 @@ light_mask = 5
 sprite_frames = SubResource("SpriteFrames_ret1b")
 animation = &"unlit"
 autoplay = "unlit"
-frame_progress = 0.534386
+frame_progress = 0.413594

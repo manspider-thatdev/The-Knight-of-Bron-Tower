@@ -3,7 +3,8 @@ extends AnimatedSprite2D
 
 enum TargetType {
 	POST = 0,
-	PLAYER = 1,
+	FIRE = 1,
+	PLAYER = 2,
 }
 
 enum Direction { LEFT, RIGHT, DOWN, UP }
@@ -15,6 +16,8 @@ enum Direction { LEFT, RIGHT, DOWN, UP }
 	]
 
 @export_flags_2d_physics var door_layer: int
+@export_flags_2d_physics var pit_layer: int
+@export_flags_2d_physics var fire_layer: int
 @export var default_face := Direction.DOWN:
 	set(value):
 		default_face = value
@@ -45,6 +48,9 @@ var end_level := false
 
 func _ready():
 	GameManager.connect("game_turn", _on_game_turn)
+	
+	if post_positions.is_empty():
+		post_positions.append(global_position)
 	
 	global_position = post_positions[0]
 	post_index += 1
@@ -87,6 +93,9 @@ func _on_game_turn(turn_time: float):
 	await tween.finished
 	global_position = global_position.round()
 	
+	if global_position == target and target_type == TargetType.FIRE:
+		raycasts[0].get_collider().put_out()
+	
 	if end_level: 
 		get_tree().reload_current_scene() # Reset Level
 	
@@ -109,7 +118,12 @@ func set_target():
 	
 	for raycast in raycasts:
 		var collider: Node2D = raycast.get_collider()
-		if !collider or collider is TileMap or collider.collision_layer == door_layer:
+		if !collider or collider is TileMap \
+				or [door_layer, pit_layer].count(collider.collision_layer):
+			continue
+		elif collider.collision_layer == fire_layer:
+			target = collider.global_position - 16 * raycast.target_position.normalized()
+			target_type = TargetType.FIRE
 			continue
 		
 		# Sees Player

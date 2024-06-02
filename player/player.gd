@@ -10,6 +10,7 @@ extends AnimatedSprite2D
 
 @export_flags_2d_physics var key_layer: int
 @export_flags_2d_physics var door_layer: int
+@export_flags_2d_physics var pit_layer: int
 
 
 var target_direction := Vector2.ZERO
@@ -57,7 +58,12 @@ func move_inputs() -> Vector2:
 	
 	if cast_dict[move_vector].is_colliding():
 		var collider = cast_dict[move_vector].get_collider()
-		if collider is TileMap or key_count == 0 or collider.collision_layer != door_layer:
+		if collider is TileMap:
+			return Vector2.ZERO
+		elif collider.collision_layer == pit_layer:
+			collider.ignite()
+			return Vector2.ZERO
+		elif key_count == 0 or collider.collision_layer != door_layer:
 			return Vector2.ZERO
 		key_count -= 1
 	return move_vector

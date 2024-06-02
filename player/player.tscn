@@ -151,6 +151,7 @@ frame_progress = 0.38205
 script = ExtResource("2_buhwe")
 key_layer = 8
 door_layer = 16
+pit_layer = 32
 
 [node name="PlayerArea" type="Area2D" parent="."]
 collision_mask = 8
@@ -162,22 +163,22 @@ shape = SubResource("RectangleShape2D_fbqlq")
 
 [node name="DownCast" type="RayCast2D" parent="RayCasts"]
 target_position = Vector2(0, 16)
-collision_mask = 22
+collision_mask = 118
 collide_with_areas = true
 
 [node name="RightCast" type="RayCast2D" parent="RayCasts"]
 target_position = Vector2(16, 0)
-collision_mask = 22
+collision_mask = 118
 collide_with_areas = true
 
 [node name="LeftCast" type="RayCast2D" parent="RayCasts"]
 target_position = Vector2(-16, 0)
-collision_mask = 22
+collision_mask = 118
 collide_with_areas = true
 
 [node name="UpCast" type="RayCast2D" parent="RayCasts"]
 target_position = Vector2(0, -16)
-collision_mask = 22
+collision_mask = 118
 collide_with_areas = true
 
 [node name="PlayerGlow" type="PointLight2D" parent="."]
