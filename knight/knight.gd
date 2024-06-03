@@ -18,6 +18,7 @@ enum Direction { LEFT, RIGHT, DOWN, UP }
 @export_flags_2d_physics var door_layer: int
 @export_flags_2d_physics var pit_layer: int
 @export_flags_2d_physics var fire_layer: int
+@export_flags_2d_physics var fake_layer: int
 @export var default_face := Direction.DOWN:
 	set(value):
 		default_face = value
@@ -119,7 +120,7 @@ func set_target():
 	for raycast in raycasts:
 		var collider: Node2D = raycast.get_collider()
 		if !collider or collider is TileMap \
-				or [door_layer, pit_layer].count(collider.collision_layer):
+				or [door_layer, pit_layer, fake_layer].count(collider.collision_layer):
 			continue
 		elif collider.collision_layer == fire_layer:
 			target = collider.global_position - 16 * raycast.target_position.normalized()

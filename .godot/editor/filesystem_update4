@@ -21,3 +21,7 @@ res://objects/door.gd
 res://objects/firepit.tscn
 res://objects/firepit.gd
 res://levels/level_4.tscn
+res://objects/fake_wall_right.tscn
+res://objects/fake_wall_left.tscn
+res://objects/fake_wall_up.tscn
+res://objects/fake_wall_down.tscn

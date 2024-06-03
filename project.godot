@@ -98,6 +98,7 @@ stay={
 2d_physics/layer_5="Door"
 2d_physics/layer_6="Pit"
 2d_physics/layer_7="Fire"
+2d_physics/layer_8="Fake"
 
 [rendering]
 

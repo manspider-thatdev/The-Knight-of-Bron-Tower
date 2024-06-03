@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://bps8rnbk2m5sm"]
+
+[ext_resource type="Texture2D" uid="uid://by4fpjw3bu86u" path="res://art/art.png" id="1_g7gpa"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7jats"]
+size = Vector2(16, 5)
+
+[node name="FakeWall" type="StaticBody2D"]
+light_mask = 7
+z_index = 2
+rotation = 3.14159
+collision_layer = 128
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5.5)
+shape = SubResource("RectangleShape2D_7jats")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_g7gpa")
+hframes = 16
+vframes = 16
+frame = 46
