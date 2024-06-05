@@ -27,3 +27,4 @@ res://objects/fake_wall_up.tscn
 res://objects/fake_wall_down.tscn
 res://globals/game_manager.gd
 res://objects/ladder.gd
+res://ui/level_select.tscn
