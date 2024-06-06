@@ -28,3 +28,8 @@ res://objects/fake_wall_down.tscn
 res://globals/game_manager.gd
 res://objects/ladder.gd
 res://ui/level_select.tscn
+res://ui/main_menu.tscn
+res://ui/main_menu.gd
+res://ui/credits_menu.tscn
+res://ui/menu.tres
+res://ui/credits_menu.gd

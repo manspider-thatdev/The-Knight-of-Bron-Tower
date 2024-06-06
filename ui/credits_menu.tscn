@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://1loh26y3ggw3"]
+
+[ext_resource type="Theme" uid="uid://cyyh23cla17b6" path="res://ui/menu.tres" id="1_iahx5"]
+[ext_resource type="Texture2D" uid="uid://by4fpjw3bu86u" path="res://art/art.png" id="2_cxvwm"]
+[ext_resource type="Script" path="res://ui/credits_menu.gd" id="2_mqko7"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oxif3"]
+atlas = ExtResource("2_cxvwm")
+region = Rect2(0, 48, 16, 16)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jnas3"]
+texture = SubResource("AtlasTexture_oxif3")
+expand_margin_left = 16.0
+expand_margin_top = 16.0
+expand_margin_right = 16.0
+expand_margin_bottom = 16.0
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iqfxj"]
+atlas = ExtResource("2_cxvwm")
+region = Rect2(48, 32, 16, 16)
+
+[node name="CreditsMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_iahx5")
+script = ExtResource("2_mqko7")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_jnas3")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.16
+anchor_top = 0.2
+anchor_right = 0.84
+anchor_bottom = 0.7
+grow_horizontal = 2
+grow_vertical = 2
+text = "Credits:
+Developed by Manspider Studios, also known as Parker Peterson. Yes it was just one man behind this game including all asset creation. One thing I didn't make however was...
+Game Engine:
+This game was made use the Godot game engine."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="BackButton" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -20.0
+offset_right = 20.0
+grow_vertical = 0
+action_mode = 0
+texture_normal = SubResource("AtlasTexture_iqfxj")
+stretch_mode = 0
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

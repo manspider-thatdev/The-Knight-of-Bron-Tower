@@ -1,42 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://bwx1avchebes3"]
+[gd_scene load_steps=6 format=3 uid="uid://bwx1avchebes3"]
 
 [ext_resource type="Texture2D" uid="uid://by4fpjw3bu86u" path="res://art/art.png" id="1_liwqq"]
+[ext_resource type="Theme" uid="uid://cyyh23cla17b6" path="res://ui/menu.tres" id="2_qgaqs"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oxif3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_p82i1"]
 atlas = ExtResource("1_liwqq")
 region = Rect2(0, 48, 16, 16)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v1k0s"]
-texture = SubResource("AtlasTexture_oxif3")
+texture = SubResource("AtlasTexture_p82i1")
 expand_margin_left = 16.0
 expand_margin_top = 16.0
 expand_margin_right = 16.0
 expand_margin_bottom = 16.0
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pcwym"]
-bg_color = Color(0.231373, 0.247059, 0.384314, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0, 0, 0, 1)
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jt0in"]
-bg_color = Color(0.192157, 0.207843, 0.32549, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0, 0, 0, 1)
-
-[sub_resource type="Theme" id="Theme_w4hww"]
-Button/styles/hover = SubResource("StyleBoxFlat_pcwym")
-Button/styles/normal = SubResource("StyleBoxFlat_jt0in")
-Button/styles/pressed = SubResource("StyleBoxFlat_jt0in")
-GridContainer/constants/h_separation = 12
-GridContainer/constants/v_separation = 12
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lubun"]
 atlas = ExtResource("1_liwqq")
@@ -51,6 +29,7 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
+theme = ExtResource("2_qgaqs")
 
 [node name="Background" type="Panel" parent="."]
 layout_mode = 1
@@ -70,7 +49,7 @@ anchor_right = 0.9
 anchor_bottom = 0.8
 grow_horizontal = 2
 grow_vertical = 2
-theme = SubResource("Theme_w4hww")
+theme = ExtResource("2_qgaqs")
 columns = 5
 
 [node name="ButtonContainer" type="AspectRatioContainer" parent="LevelContainer"]

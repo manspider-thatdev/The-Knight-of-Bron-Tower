@@ -1,6 +1,7 @@
+Label
+Button
 TextureButton
 AspectRatioContainer
-Button
 Panel
 GridContainer
 Sprite2D
@@ -12,4 +13,3 @@ LightOccluder2D
 PointLight2D
 Node2D
 DirectionalLight2D
-Camera2D
