@@ -15,6 +15,12 @@ var turn_time: float = 0.5
 var level_id: int = 0
 
 
+func load_level(load_level_id):
+	level_id = load_level_id
+	var level = load(levels[level_id]).instantiate()
+	get_tree().root.add_child(level)
+
+
 func load_next_level(current_level: Object):
 	level_id += 1
 	

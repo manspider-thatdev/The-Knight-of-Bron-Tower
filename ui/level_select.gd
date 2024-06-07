@@ -1,0 +1,24 @@
+extends Control
+
+
+@onready var button_container = $LevelContainer/ButtonContainer
+
+
+func _ready():
+	button_container.get_child(0).pressed.connect(_on_level_button_pressed.bind(0))
+	for i in GameManager.levels.size() - 1:
+		var new_button_container := button_container.duplicate()
+		$LevelContainer.add_child(new_button_container)
+		var button := new_button_container.get_child(0) as Button
+		button.text = str(i + 2)
+		button.pressed.connect(_on_level_button_pressed.bind(i + 1))
+
+
+func _on_back_button_pressed():
+	get_tree().root.add_child(load("res://ui/main_menu.tscn").instantiate())
+	queue_free()
+
+
+func _on_level_button_pressed(level_id: int):
+	GameManager.load_level(level_id)
+	queue_free()

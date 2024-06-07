@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://ctn2i1gxvcwih"]
+
+[ext_resource type="Texture2D" uid="uid://by4fpjw3bu86u" path="res://art/art.png" id="1_kxel1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lubun"]
+atlas = ExtResource("1_kxel1")
+region = Rect2(16, 32, 16, 16)
+
+[node name="BackButton" type="TextureButton"]
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -20.0
+offset_right = 20.0
+grow_vertical = 0
+action_mode = 0
+texture_normal = SubResource("AtlasTexture_lubun")
+stretch_mode = 0

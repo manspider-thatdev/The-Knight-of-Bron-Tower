@@ -33,3 +33,6 @@ res://ui/main_menu.gd
 res://ui/credits_menu.tscn
 res://ui/menu.tres
 res://ui/credits_menu.gd
+res://ui/level_select.gd
+res://ui/back_button.tscn
+res://levels/level_manager.gd

@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwx1avchebes3"]
+[gd_scene load_steps=7 format=3 uid="uid://bwx1avchebes3"]
 
 [ext_resource type="Texture2D" uid="uid://by4fpjw3bu86u" path="res://art/art.png" id="1_liwqq"]
+[ext_resource type="Script" path="res://ui/level_select.gd" id="2_2np3s"]
 [ext_resource type="Theme" uid="uid://cyyh23cla17b6" path="res://ui/menu.tres" id="2_qgaqs"]
+[ext_resource type="PackedScene" uid="uid://ctn2i1gxvcwih" path="res://ui/back_button.tscn" id="4_baop0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_p82i1"]
 atlas = ExtResource("1_liwqq")
@@ -16,10 +18,6 @@ expand_margin_bottom = 16.0
 axis_stretch_horizontal = 2
 axis_stretch_vertical = 2
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_lubun"]
-atlas = ExtResource("1_liwqq")
-region = Rect2(48, 32, 16, 16)
-
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -30,6 +28,7 @@ grow_vertical = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme = ExtResource("2_qgaqs")
+script = ExtResource("2_2np3s")
 
 [node name="Background" type="Panel" parent="."]
 layout_mode = 1
@@ -62,14 +61,7 @@ action_mode = 0
 text = "1"
 icon_alignment = 1
 
-[node name="BackButton" type="TextureButton" parent="."]
+[node name="BackButton" parent="." instance=ExtResource("4_baop0")]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -20.0
-offset_right = 20.0
-grow_vertical = 0
-action_mode = 0
-texture_normal = SubResource("AtlasTexture_lubun")
-stretch_mode = 0
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]

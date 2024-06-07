@@ -1,4 +1,8 @@
+TextureRect
+HBoxContainer
 Label
+Node
+Control
 Button
 TextureButton
 AspectRatioContainer
@@ -9,7 +13,3 @@ CollisionShape2D
 StaticBody2D
 AnimatedSprite2D
 Area2D
-LightOccluder2D
-PointLight2D
-Node2D
-DirectionalLight2D

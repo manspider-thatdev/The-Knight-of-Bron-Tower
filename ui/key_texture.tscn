@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://d2lix1pv5wxsm"]
+
+[ext_resource type="Texture2D" uid="uid://by4fpjw3bu86u" path="res://art/art.png" id="1_athwd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5g0o6"]
+atlas = ExtResource("1_athwd")
+region = Rect2(48, 32, 16, 16)
+
+[node name="KeyTexture" type="TextureRect"]
+texture = SubResource("AtlasTexture_5g0o6")
+expand_mode = 2
