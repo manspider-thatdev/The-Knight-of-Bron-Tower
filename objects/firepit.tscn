@@ -1,10 +1,11 @@
-[gd_scene load_steps=13 format=3 uid="uid://bmpeq2r4s6f4l"]
+[gd_scene load_steps=14 format=3 uid="uid://bmpeq2r4s6f4l"]
 
 [ext_resource type="Script" path="res://objects/firepit.gd" id="1_jovwb"]
 [ext_resource type="Texture2D" uid="uid://by4fpjw3bu86u" path="res://art/art.png" id="1_orfl4"]
 [ext_resource type="AudioStream" uid="uid://dk2qdysl80f8x" path="res://audio/fire.wav" id="3_d3v2m"]
 [ext_resource type="AudioStream" uid="uid://d2n3fwspqfpcn" path="res://audio/ignite.wav" id="4_fncs4"]
 [ext_resource type="AudioStream" uid="uid://dubhco1i6ym0w" path="res://audio/dowse.wav" id="5_37f33"]
+[ext_resource type="Texture2D" uid="uid://doh73k3acded4" path="res://art/player_light.png" id="6_cv8sq"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_34n0n"]
 size = Vector2(14, 14)
@@ -97,3 +98,11 @@ area_mask = 0
 stream = ExtResource("5_37f33")
 volume_db = 4.14
 area_mask = 0
+
+[node name="Light" type="PointLight2D" parent="."]
+enabled = false
+color = Color(0.909804, 0.529412, 0.235294, 1)
+range_item_cull_mask = 4
+shadow_enabled = true
+shadow_item_cull_mask = 4
+texture = ExtResource("6_cv8sq")

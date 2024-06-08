@@ -5,6 +5,7 @@ extends Area2D
 @onready var fire_audio: AudioStreamPlayer2D = $FireAudio
 @onready var ignite_audio: AudioStreamPlayer2D = $IgniteAudio
 @onready var dowse_audio: AudioStreamPlayer2D = $DowseAudio
+@onready var light: PointLight2D = $Light
 
 @export var is_lit := false
 @export_flags_2d_physics var unlit_layer := 32
@@ -19,6 +20,7 @@ func _ready():
 func ignite():
 	is_lit = true
 	collision_layer = lit_layer
+	light.enabled = true
 	sprite.play("lit")
 	ignite_audio.play()
 	fire_audio.play()
@@ -27,6 +29,7 @@ func ignite():
 func put_out():
 	is_lit = false
 	collision_layer = unlit_layer
+	light.enabled = false
 	sprite.play("unlit")
 	dowse_audio.play()
 	fire_audio.stop()

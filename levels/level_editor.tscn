@@ -720,15 +720,15 @@ theme_override_constants/separation = 0
 alignment = 2
 
 [node name="Knight" parent="." instance=ExtResource("1_2byca")]
-position = Vector2(104, 104)
+position = Vector2(152, 136)
 default_face = 3
-post_positions = Array[Vector2]([Vector2(104, 104)])
+post_positions = Array[Vector2]([Vector2(152, 120)])
 
 [connection signal="area_entered" from="Door" to="Door" method="_on_area_entered"]
-[connection signal="area_entered" from="@Area2D@576314" to="@Area2D@576314" method="_on_area_entered"]
-[connection signal="area_entered" from="@Area2D@576315" to="@Area2D@576315" method="_on_area_entered"]
-[connection signal="area_entered" from="@Area2D@576316" to="@Area2D@576316" method="_on_area_entered"]
+[connection signal="area_entered" from="@Area2D@589166" to="@Area2D@589166" method="_on_area_entered"]
+[connection signal="area_entered" from="@Area2D@589167" to="@Area2D@589167" method="_on_area_entered"]
+[connection signal="area_entered" from="@Area2D@589168" to="@Area2D@589168" method="_on_area_entered"]
 [connection signal="area_entered" from="Key" to="Key" method="_on_area_entered"]
-[connection signal="area_entered" from="@Area2D@576317" to="@Area2D@576317" method="_on_area_entered"]
-[connection signal="area_entered" from="@Area2D@576318" to="@Area2D@576318" method="_on_area_entered"]
-[connection signal="area_entered" from="@Area2D@576319" to="@Area2D@576319" method="_on_area_entered"]
+[connection signal="area_entered" from="@Area2D@589169" to="@Area2D@589169" method="_on_area_entered"]
+[connection signal="area_entered" from="@Area2D@589170" to="@Area2D@589170" method="_on_area_entered"]
+[connection signal="area_entered" from="@Area2D@589171" to="@Area2D@589171" method="_on_area_entered"]
