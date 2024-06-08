@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://ckl1ls5bva2gs"]
 
 [ext_resource type="Shader" path="res://art/visibility.gdshader" id="1_fjmwr"]
-[ext_resource type="Script" path="res://objects/ladder.gd" id="1_kn8fr"]
+[ext_resource type="Script" path="res://objects/ladder/ladder.gd" id="1_kn8fr"]
 [ext_resource type="Texture2D" uid="uid://by4fpjw3bu86u" path="res://art/art.png" id="2_u6qir"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nmfyl"]

@@ -1,20 +1,19 @@
-[gd_scene load_steps=58 format=3 uid="uid://mnfui48wfg37"]
+[gd_scene load_steps=57 format=3 uid="uid://mnfui48wfg37"]
 
-[ext_resource type="PackedScene" uid="uid://cuqbisxr24jd0" path="res://knight/knight.tscn" id="1_2byca"]
-[ext_resource type="PackedScene" uid="uid://bmuhxbajo6s3w" path="res://objects/key.tscn" id="1_kvuv2"]
-[ext_resource type="PackedScene" uid="uid://fx5pj0valbvl" path="res://player/player.tscn" id="2_ggdts"]
-[ext_resource type="PackedScene" uid="uid://bmpeq2r4s6f4l" path="res://objects/firepit.tscn" id="2_uhvyn"]
-[ext_resource type="PackedScene" uid="uid://co6ugwxm0c5u2" path="res://objects/fake_wall_down.tscn" id="3_8wlow"]
-[ext_resource type="PackedScene" uid="uid://ckl1ls5bva2gs" path="res://objects/ladder.tscn" id="3_atpjl"]
+[ext_resource type="PackedScene" uid="uid://bmuhxbajo6s3w" path="res://objects/key/key.tscn" id="1_kvuv2"]
+[ext_resource type="PackedScene" uid="uid://fx5pj0valbvl" path="res://objects/player/player.tscn" id="2_ggdts"]
+[ext_resource type="PackedScene" uid="uid://bmpeq2r4s6f4l" path="res://objects/firepit/firepit.tscn" id="2_uhvyn"]
+[ext_resource type="PackedScene" uid="uid://co6ugwxm0c5u2" path="res://objects/fake_wall/fake_wall_down.tscn" id="3_8wlow"]
+[ext_resource type="PackedScene" uid="uid://ckl1ls5bva2gs" path="res://objects/ladder/ladder.tscn" id="3_atpjl"]
 [ext_resource type="Texture2D" uid="uid://by4fpjw3bu86u" path="res://art/art.png" id="4_d0ut2"]
-[ext_resource type="PackedScene" uid="uid://cdfwynpddndn0" path="res://objects/fake_wall_left.tscn" id="4_du7o0"]
+[ext_resource type="PackedScene" uid="uid://cdfwynpddndn0" path="res://objects/fake_wall/fake_wall_left.tscn" id="4_du7o0"]
 [ext_resource type="PackedScene" uid="uid://brkkrhmwyk6w5" path="res://objects/lanterns/lantern_up.tscn" id="4_twfm1"]
 [ext_resource type="PackedScene" uid="uid://d2340j0n7854o" path="res://objects/lanterns/lantern_down.tscn" id="5_4ejcp"]
 [ext_resource type="PackedScene" uid="uid://dh7562vr4m7rf" path="res://objects/lanterns/lantern_right.tscn" id="5_pc0we"]
-[ext_resource type="PackedScene" uid="uid://yqcdnl6nakh6" path="res://objects/fake_wall_right.tscn" id="5_rcp7d"]
+[ext_resource type="PackedScene" uid="uid://yqcdnl6nakh6" path="res://objects/fake_wall/fake_wall_right.tscn" id="5_rcp7d"]
 [ext_resource type="PackedScene" uid="uid://bgw51r8tlfag5" path="res://objects/lanterns/lantern_left.tscn" id="6_pa61a"]
-[ext_resource type="PackedScene" uid="uid://bps8rnbk2m5sm" path="res://objects/fake_wall_up.tscn" id="6_qj7tg"]
-[ext_resource type="PackedScene" uid="uid://d3m2brdum7xd5" path="res://objects/door.tscn" id="8_gv0em"]
+[ext_resource type="PackedScene" uid="uid://bps8rnbk2m5sm" path="res://objects/fake_wall/fake_wall_up.tscn" id="6_qj7tg"]
+[ext_resource type="PackedScene" uid="uid://d3m2brdum7xd5" path="res://objects/door/door.tscn" id="8_gv0em"]
 [ext_resource type="Theme" uid="uid://cyyh23cla17b6" path="res://ui/menu.tres" id="15_f4mfv"]
 [ext_resource type="Script" path="res://levels/level_manager.gd" id="15_fbqpl"]
 [ext_resource type="PackedScene" uid="uid://ctn2i1gxvcwih" path="res://ui/back_button.tscn" id="16_ms0cn"]
@@ -719,16 +718,16 @@ size_flags_horizontal = 3
 theme_override_constants/separation = 0
 alignment = 2
 
-[node name="Knight" parent="." instance=ExtResource("1_2byca")]
-position = Vector2(152, 136)
+[node name="Knight" parent="." instance_placeholder="res://knight/knight.tscn"]
+position = Vector2(152, 120)
 default_face = 3
 post_positions = Array[Vector2]([Vector2(152, 120)])
 
 [connection signal="area_entered" from="Door" to="Door" method="_on_area_entered"]
-[connection signal="area_entered" from="@Area2D@589166" to="@Area2D@589166" method="_on_area_entered"]
-[connection signal="area_entered" from="@Area2D@589167" to="@Area2D@589167" method="_on_area_entered"]
-[connection signal="area_entered" from="@Area2D@589168" to="@Area2D@589168" method="_on_area_entered"]
+[connection signal="area_entered" from="@Area2D@593757" to="@Area2D@593757" method="_on_area_entered"]
+[connection signal="area_entered" from="@Area2D@593758" to="@Area2D@593758" method="_on_area_entered"]
+[connection signal="area_entered" from="@Area2D@593759" to="@Area2D@593759" method="_on_area_entered"]
 [connection signal="area_entered" from="Key" to="Key" method="_on_area_entered"]
-[connection signal="area_entered" from="@Area2D@589169" to="@Area2D@589169" method="_on_area_entered"]
-[connection signal="area_entered" from="@Area2D@589170" to="@Area2D@589170" method="_on_area_entered"]
-[connection signal="area_entered" from="@Area2D@589171" to="@Area2D@589171" method="_on_area_entered"]
+[connection signal="area_entered" from="@Area2D@593760" to="@Area2D@593760" method="_on_area_entered"]
+[connection signal="area_entered" from="@Area2D@593761" to="@Area2D@593761" method="_on_area_entered"]
+[connection signal="area_entered" from="@Area2D@593762" to="@Area2D@593762" method="_on_area_entered"]

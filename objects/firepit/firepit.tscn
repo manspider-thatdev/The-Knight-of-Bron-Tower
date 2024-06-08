@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=3 uid="uid://bmpeq2r4s6f4l"]
 
-[ext_resource type="Script" path="res://objects/firepit.gd" id="1_jovwb"]
+[ext_resource type="Script" path="res://objects/firepit/firepit.gd" id="1_jovwb"]
 [ext_resource type="Texture2D" uid="uid://by4fpjw3bu86u" path="res://art/art.png" id="1_orfl4"]
 [ext_resource type="AudioStream" uid="uid://dk2qdysl80f8x" path="res://audio/fire.wav" id="3_d3v2m"]
 [ext_resource type="AudioStream" uid="uid://d2n3fwspqfpcn" path="res://audio/ignite.wav" id="4_fncs4"]

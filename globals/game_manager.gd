@@ -5,10 +5,6 @@ signal game_turn(turn_time)
 
 
 @onready var levels: Array[String] = [
-	"res://levels/level_1.tscn", 
-	"res://levels/level_2.tscn", 
-	"res://levels/level_3.tscn", 
-	"res://levels/level_4.tscn",
 	]
 
 var turn_time: float = 0.5

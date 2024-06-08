@@ -95,7 +95,10 @@ func _on_game_turn(turn_time: float):
 	global_position = global_position.round()
 	
 	if global_position == target and target_type == TargetType.FIRE:
-		raycasts[0].get_collider().put_out()
+		for raycast in raycasts:
+			var collider = raycast.get_collider()
+			if not collider is TileMap and collider.collision_layer == fire_layer:
+				collider.put_out()
 	
 	if end_level:
 		AudioManager.die_audio.play()
