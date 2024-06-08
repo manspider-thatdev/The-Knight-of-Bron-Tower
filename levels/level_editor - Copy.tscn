@@ -718,7 +718,7 @@ size_flags_horizontal = 3
 theme_override_constants/separation = 0
 alignment = 2
 
-[node name="Knight" parent="." instance_placeholder="res://objects/knight/knight.tscn"]
+[node name="Knight" parent="." instance_placeholder="res://knight/knight.tscn"]
 position = Vector2(152, 120)
 default_face = 3
 post_positions = Array[Vector2]([Vector2(152, 120)])
