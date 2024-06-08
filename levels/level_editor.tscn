@@ -715,6 +715,7 @@ offset_top = -20.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_horizontal = 3
+mouse_filter = 2
 theme_override_constants/separation = 0
 alignment = 2
 
@@ -723,11 +724,12 @@ position = Vector2(152, 120)
 default_face = 3
 post_positions = Array[Vector2]([Vector2(152, 120)])
 
+[connection signal="pressed" from="LevelUI/BackButton" to="." method="_on_back_button_pressed"]
 [connection signal="area_entered" from="Door" to="Door" method="_on_area_entered"]
-[connection signal="area_entered" from="@Area2D@98151" to="@Area2D@98151" method="_on_area_entered"]
-[connection signal="area_entered" from="@Area2D@98152" to="@Area2D@98152" method="_on_area_entered"]
-[connection signal="area_entered" from="@Area2D@98153" to="@Area2D@98153" method="_on_area_entered"]
+[connection signal="area_entered" from="@Area2D@104145" to="@Area2D@104145" method="_on_area_entered"]
+[connection signal="area_entered" from="@Area2D@104146" to="@Area2D@104146" method="_on_area_entered"]
+[connection signal="area_entered" from="@Area2D@104147" to="@Area2D@104147" method="_on_area_entered"]
 [connection signal="area_entered" from="Key" to="Key" method="_on_area_entered"]
-[connection signal="area_entered" from="@Area2D@98154" to="@Area2D@98154" method="_on_area_entered"]
-[connection signal="area_entered" from="@Area2D@98155" to="@Area2D@98155" method="_on_area_entered"]
-[connection signal="area_entered" from="@Area2D@98156" to="@Area2D@98156" method="_on_area_entered"]
+[connection signal="area_entered" from="@Area2D@104148" to="@Area2D@104148" method="_on_area_entered"]
+[connection signal="area_entered" from="@Area2D@104149" to="@Area2D@104149" method="_on_area_entered"]
+[connection signal="area_entered" from="@Area2D@104150" to="@Area2D@104150" method="_on_area_entered"]
