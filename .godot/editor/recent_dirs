@@ -1,3 +1,4 @@
+res://globals
 res://ui
 res://objects
 res://art
@@ -5,5 +6,4 @@ res://levels
 res://player
 res://knight
 res://components
-res://globals
 res://

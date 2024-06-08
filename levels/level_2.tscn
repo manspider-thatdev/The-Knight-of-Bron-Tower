@@ -2,12 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://cuqbisxr24jd0" path="res://knight/knight.tscn" id="1_7hw8v"]
 [ext_resource type="PackedScene" uid="uid://fx5pj0valbvl" path="res://player/player.tscn" id="2_ycq6d"]
-[ext_resource type="PackedScene" uid="uid://d2340j0n7854o" path="res://objects/lantern_down.tscn" id="3_jxr5g"]
+[ext_resource type="PackedScene" uid="uid://d2340j0n7854o" path="res://objects/lanterns/lantern_down.tscn" id="3_jxr5g"]
 [ext_resource type="PackedScene" uid="uid://ckl1ls5bva2gs" path="res://objects/ladder.tscn" id="3_w21qb"]
-[ext_resource type="PackedScene" uid="uid://bgw51r8tlfag5" path="res://objects/lantern_left.tscn" id="4_o6tgr"]
+[ext_resource type="PackedScene" uid="uid://bgw51r8tlfag5" path="res://objects/lanterns/lantern_left.tscn" id="4_o6tgr"]
 [ext_resource type="Texture2D" uid="uid://by4fpjw3bu86u" path="res://art/art.png" id="4_v4bta"]
-[ext_resource type="PackedScene" uid="uid://dh7562vr4m7rf" path="res://objects/lantern_right.tscn" id="5_l2nhx"]
-[ext_resource type="PackedScene" uid="uid://brkkrhmwyk6w5" path="res://objects/lantern_up.tscn" id="6_10ud8"]
+[ext_resource type="PackedScene" uid="uid://dh7562vr4m7rf" path="res://objects/lanterns/lantern_right.tscn" id="5_l2nhx"]
+[ext_resource type="PackedScene" uid="uid://brkkrhmwyk6w5" path="res://objects/lanterns/lantern_up.tscn" id="6_10ud8"]
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_44saj"]
 scenes/2/scene = ExtResource("2_ycq6d")

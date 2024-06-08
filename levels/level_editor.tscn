@@ -1,5 +1,6 @@
-[gd_scene load_steps=57 format=3 uid="uid://mnfui48wfg37"]
+[gd_scene load_steps=58 format=3 uid="uid://mnfui48wfg37"]
 
+[ext_resource type="PackedScene" uid="uid://cuqbisxr24jd0" path="res://knight/knight.tscn" id="1_2byca"]
 [ext_resource type="PackedScene" uid="uid://bmuhxbajo6s3w" path="res://objects/key.tscn" id="1_kvuv2"]
 [ext_resource type="PackedScene" uid="uid://fx5pj0valbvl" path="res://player/player.tscn" id="2_ggdts"]
 [ext_resource type="PackedScene" uid="uid://bmpeq2r4s6f4l" path="res://objects/firepit.tscn" id="2_uhvyn"]
@@ -7,11 +8,11 @@
 [ext_resource type="PackedScene" uid="uid://ckl1ls5bva2gs" path="res://objects/ladder.tscn" id="3_atpjl"]
 [ext_resource type="Texture2D" uid="uid://by4fpjw3bu86u" path="res://art/art.png" id="4_d0ut2"]
 [ext_resource type="PackedScene" uid="uid://cdfwynpddndn0" path="res://objects/fake_wall_left.tscn" id="4_du7o0"]
-[ext_resource type="PackedScene" uid="uid://brkkrhmwyk6w5" path="res://objects/lantern_up.tscn" id="4_twfm1"]
-[ext_resource type="PackedScene" uid="uid://d2340j0n7854o" path="res://objects/lantern_down.tscn" id="5_4ejcp"]
-[ext_resource type="PackedScene" uid="uid://dh7562vr4m7rf" path="res://objects/lantern_right.tscn" id="5_pc0we"]
+[ext_resource type="PackedScene" uid="uid://brkkrhmwyk6w5" path="res://objects/lanterns/lantern_up.tscn" id="4_twfm1"]
+[ext_resource type="PackedScene" uid="uid://d2340j0n7854o" path="res://objects/lanterns/lantern_down.tscn" id="5_4ejcp"]
+[ext_resource type="PackedScene" uid="uid://dh7562vr4m7rf" path="res://objects/lanterns/lantern_right.tscn" id="5_pc0we"]
 [ext_resource type="PackedScene" uid="uid://yqcdnl6nakh6" path="res://objects/fake_wall_right.tscn" id="5_rcp7d"]
-[ext_resource type="PackedScene" uid="uid://bgw51r8tlfag5" path="res://objects/lantern_left.tscn" id="6_pa61a"]
+[ext_resource type="PackedScene" uid="uid://bgw51r8tlfag5" path="res://objects/lanterns/lantern_left.tscn" id="6_pa61a"]
 [ext_resource type="PackedScene" uid="uid://bps8rnbk2m5sm" path="res://objects/fake_wall_up.tscn" id="6_qj7tg"]
 [ext_resource type="PackedScene" uid="uid://d3m2brdum7xd5" path="res://objects/door.tscn" id="8_gv0em"]
 [ext_resource type="Theme" uid="uid://cyyh23cla17b6" path="res://ui/menu.tres" id="15_f4mfv"]
@@ -690,7 +691,7 @@ layer_0/tile_data = PackedInt32Array(0, 1, 3, 65536, 1, 3, 131072, 1, 3, 196608,
 layer_1/name = "Walls"
 layer_1/tile_data = PackedInt32Array(65535, 589825, 4, -1, 589825, 3, -65536, 720897, 3, 0, 655361, 5, 1, 655361, 5, -65535, 720897, 3, -65534, 720897, 3, -65533, 720897, 3, -65532, 720897, 3, -65531, 720897, 3, -65530, 720897, 3, -65529, 720897, 3, -65528, 720897, 3, -65527, 720897, 3, -65526, 720897, 3, -65525, 720897, 3, -65524, 720897, 3, -65523, 720897, 3, -65522, 720897, 3, -65521, 720897, 3, -65520, 720897, 3, -65519, 720897, 3, -65518, 786433, 3, 18, 786433, 5, 17, 655361, 5, 16, 655361, 5, 15, 655361, 5, 14, 655361, 5, 12, 655361, 5, 11, 655361, 5, 10, 655361, 5, 6, 655361, 5, 5, 655361, 5, 4, 655361, 5, 3, 655361, 5, 2, 655361, 5, 7, 655361, 5, 8, 655361, 5, 9, 655361, 5, 65554, 786433, 5, 131090, 786433, 5, 196626, 786433, 5, 262162, 786433, 5, 327698, 786433, 5, 393234, 786433, 5, 458770, 786433, 5, 524306, 786433, 5, 589842, 786433, 5, 655378, 786433, 6, 655377, 655361, 6, 589841, 655361, 5, 589840, 655361, 5, 589839, 655361, 5, 589838, 655361, 5, 589837, 655361, 5, 589836, 655361, 5, 655375, 655361, 6, 655376, 655361, 6, 655374, 655361, 6, 655373, 655361, 6, 655372, 655361, 6, 655371, 655361, 6, 655370, 655361, 6, 655369, 655361, 6, 589835, 655361, 5, 589834, 655361, 5, 589833, 655361, 5, 589832, 655361, 5, 589831, 655361, 5, 589830, 655361, 5, 589829, 655361, 5, 589828, 655361, 5, 589827, 655361, 5, 589826, 655361, 5, 655368, 655361, 6, 655367, 655361, 6, 655366, 655361, 6, 655365, 655361, 6, 655364, 655361, 6, 524305, 655361, 5, 458769, 655361, 5, 393233, 655361, 5, 327697, 655361, 5, 262161, 655361, 5, 196625, 655361, 5, 131089, 655361, 5, 65553, 655361, 5, 131071, 589825, 4, 196607, 589825, 4, 262143, 589825, 4, 327679, 589825, 4, 393215, 589825, 4, 458751, 589825, 4, 524287, 589825, 4, 589823, 589825, 4, 655359, 589825, 4, 720895, 589825, 6, 655360, 655361, 6, 655361, 655361, 6, 655362, 655361, 6, 655363, 655361, 6, 589825, 655361, 5, 589824, 655361, 5, 524288, 655361, 5, 458752, 655361, 5, 393216, 655361, 5, 327680, 655361, 5, 262144, 655361, 5, 196608, 655361, 5, 65536, 655361, 5, 131072, 655361, 5, 13, 655361, 5, 524289, 458753, 4, 524304, 393217, 4, 524303, 720897, 3, 524302, 720897, 3, 524301, 720897, 3, 524300, 720897, 3, 524299, 720897, 3, 524298, 720897, 3, 524297, 720897, 3, 524296, 720897, 3, 524295, 720897, 3, 524294, 720897, 3, 524293, 720897, 3, 524292, 720897, 3, 524291, 720897, 3, 524290, 720897, 3, 458753, 786433, 5, 393217, 786433, 5, 327681, 786433, 5, 262145, 786433, 5, 196609, 786433, 5, 131073, 786433, 5, 65537, 458753, 5, 65538, 655361, 6, 65539, 655361, 6, 65540, 655361, 6, 65541, 655361, 6, 65542, 655361, 6, 65543, 655361, 6, 65544, 655361, 6, 65545, 655361, 6, 65546, 655361, 6, 65547, 655361, 6, 65548, 655361, 6, 65549, 655361, 6, 65550, 655361, 6, 65551, 655361, 6, 65552, 393217, 5, 131088, 589825, 4, 196624, 589825, 4, 262160, 589825, 4, 327696, 589825, 4, 393232, 589825, 4, 458768, 589825, 4, 393223, 0, 589824, 393224, 0, 589824, 393225, 0, 589824, 327693, 0, 589824)
 layer_2/name = "Objects"
-layer_2/tile_data = PackedInt32Array(262148, 0, 131072, 262151, 0, 655360, 262152, 0, 655360, 262153, 0, 655360, 262154, 0, 655360)
+layer_2/tile_data = PackedInt32Array(262148, 0, 131072, 262151, 0, 655360, 262152, 0, 655360, 262153, 0, 655360, 262154, 0, 655360, 262150, 0, 720896)
 layer_3/name = "Lights"
 layer_3/tile_data = PackedInt32Array(262151, 0, 327680, 262152, 0, 327680, 262154, 0, 327680)
 script = ExtResource("15_fbqpl")
@@ -718,11 +719,16 @@ size_flags_horizontal = 3
 theme_override_constants/separation = 0
 alignment = 2
 
+[node name="Knight" parent="." instance=ExtResource("1_2byca")]
+position = Vector2(104, 104)
+default_face = 3
+post_positions = Array[Vector2]([Vector2(104, 104)])
+
 [connection signal="area_entered" from="Door" to="Door" method="_on_area_entered"]
-[connection signal="area_entered" from="@Area2D@527829" to="@Area2D@527829" method="_on_area_entered"]
-[connection signal="area_entered" from="@Area2D@527830" to="@Area2D@527830" method="_on_area_entered"]
-[connection signal="area_entered" from="@Area2D@527831" to="@Area2D@527831" method="_on_area_entered"]
+[connection signal="area_entered" from="@Area2D@576314" to="@Area2D@576314" method="_on_area_entered"]
+[connection signal="area_entered" from="@Area2D@576315" to="@Area2D@576315" method="_on_area_entered"]
+[connection signal="area_entered" from="@Area2D@576316" to="@Area2D@576316" method="_on_area_entered"]
 [connection signal="area_entered" from="Key" to="Key" method="_on_area_entered"]
-[connection signal="area_entered" from="@Area2D@527832" to="@Area2D@527832" method="_on_area_entered"]
-[connection signal="area_entered" from="@Area2D@527833" to="@Area2D@527833" method="_on_area_entered"]
-[connection signal="area_entered" from="@Area2D@527834" to="@Area2D@527834" method="_on_area_entered"]
+[connection signal="area_entered" from="@Area2D@576317" to="@Area2D@576317" method="_on_area_entered"]
+[connection signal="area_entered" from="@Area2D@576318" to="@Area2D@576318" method="_on_area_entered"]
+[connection signal="area_entered" from="@Area2D@576319" to="@Area2D@576319" method="_on_area_entered"]

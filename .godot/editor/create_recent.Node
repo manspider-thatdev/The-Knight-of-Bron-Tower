@@ -1,7 +1,9 @@
+AudioStreamPlayer2D
+Node
+AudioStreamPlayer
 TextureRect
 HBoxContainer
 Label
-Node
 Control
 Button
 TextureButton
@@ -10,6 +12,3 @@ Panel
 GridContainer
 Sprite2D
 CollisionShape2D
-StaticBody2D
-AnimatedSprite2D
-Area2D

@@ -97,7 +97,8 @@ func _on_game_turn(turn_time: float):
 	if global_position == target and target_type == TargetType.FIRE:
 		raycasts[0].get_collider().put_out()
 	
-	if end_level: 
+	if end_level:
+		AudioManager.die_audio.play()
 		get_tree().reload_current_scene() # Reset Level
 	
 	set_target()

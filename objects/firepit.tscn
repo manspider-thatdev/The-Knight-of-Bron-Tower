@@ -1,7 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bmpeq2r4s6f4l"]
+[gd_scene load_steps=13 format=3 uid="uid://bmpeq2r4s6f4l"]
 
 [ext_resource type="Script" path="res://objects/firepit.gd" id="1_jovwb"]
 [ext_resource type="Texture2D" uid="uid://by4fpjw3bu86u" path="res://art/art.png" id="1_orfl4"]
+[ext_resource type="AudioStream" uid="uid://dk2qdysl80f8x" path="res://audio/fire.wav" id="3_d3v2m"]
+[ext_resource type="AudioStream" uid="uid://d2n3fwspqfpcn" path="res://audio/ignite.wav" id="4_fncs4"]
+[ext_resource type="AudioStream" uid="uid://dubhco1i6ym0w" path="res://audio/dowse.wav" id="5_37f33"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_34n0n"]
 size = Vector2(14, 14)
@@ -80,3 +83,17 @@ sprite_frames = SubResource("SpriteFrames_ret1b")
 animation = &"unlit"
 autoplay = "unlit"
 frame_progress = 0.413594
+
+[node name="FireAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_d3v2m")
+volume_db = -2.325
+area_mask = 0
+
+[node name="IgniteAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_fncs4")
+area_mask = 0
+
+[node name="DowseAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_37f33")
+volume_db = 4.14
+area_mask = 0

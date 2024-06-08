@@ -36,3 +36,9 @@ res://ui/credits_menu.gd
 res://ui/level_select.gd
 res://ui/back_button.tscn
 res://levels/level_manager.gd
+res://globals/audio_manager.gd
+res://globals/audio_manager.tscn
+res://objects/lanterns/lantern_up.tscn
+res://objects/lanterns/lantern_down.tscn
+res://objects/lanterns/lantern_left.tscn
+res://objects/lanterns/lantern_right.tscn

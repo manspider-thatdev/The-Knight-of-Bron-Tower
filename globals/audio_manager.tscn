@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://by0llpivauy8o"]
+
+[ext_resource type="Script" path="res://globals/audio_manager.gd" id="1_lcrvd"]
+[ext_resource type="AudioStream" uid="uid://3summbc8yni0" path="res://audio/key.wav" id="2_mdmcc"]
+[ext_resource type="AudioStream" uid="uid://pp4np52akdyd" path="res://audio/door.wav" id="3_3ohk0"]
+[ext_resource type="AudioStream" uid="uid://b7d5ql2gnmqvc" path="res://audio/die.wav" id="4_ffsm3"]
+[ext_resource type="AudioStream" uid="uid://6gpskjm7ym70" path="res://audio/win.wav" id="5_46nke"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_lcrvd")
+
+[node name="KeyAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_mdmcc")
+volume_db = 6.56
+pitch_scale = 0.59
+area_mask = 0
+
+[node name="DoorAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_3ohk0")
+volume_db = -0.3
+area_mask = 0
+
+[node name="DieAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_ffsm3")
+area_mask = 0
+
+[node name="WinAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_46nke")
+area_mask = 0

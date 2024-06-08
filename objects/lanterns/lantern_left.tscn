@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bgw51r8tlfag5"]
 
-[ext_resource type="Texture2D" uid="uid://by4fpjw3bu86u" path="res://art/art.png" id="1_s2q52"]
-[ext_resource type="Texture2D" uid="uid://doh73k3acded4" path="res://art/player_light.png" id="2_srr8g"]
+[ext_resource type="Texture2D" uid="uid://by4fpjw3bu86u" path="res://art/art.png" id="1_apytx"]
+[ext_resource type="Texture2D" uid="uid://wn4ja385e1a7" path="res://art/lantern_light.png" id="2_hbiqd"]
 
 [node name="LanternLeft" type="Node2D"]
 position = Vector2(-9, 0)
@@ -9,7 +9,7 @@ rotation = 1.5708
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 light_mask = 0
-texture = ExtResource("1_s2q52")
+texture = ExtResource("1_apytx")
 hframes = 16
 vframes = 16
 frame = 38
@@ -19,4 +19,4 @@ color = Color(0.909804, 0.529412, 0.235294, 1)
 range_item_cull_mask = 6
 shadow_enabled = true
 shadow_item_cull_mask = 6
-texture = ExtResource("2_srr8g")
+texture = ExtResource("2_hbiqd")
