@@ -1,4 +1,6 @@
-[gd_resource type="Theme" load_steps=3 format=3 uid="uid://cyyh23cla17b6"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://cyyh23cla17b6"]
+
+[ext_resource type="Texture2D" uid="uid://by4fpjw3bu86u" path="res://art/art.png" id="1_rwj0m"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pcwym"]
 bg_color = Color(0.231373, 0.247059, 0.384314, 1)
@@ -16,6 +18,19 @@ border_width_right = 5
 border_width_bottom = 5
 border_color = Color(0, 0, 0, 1)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_no0hv"]
+atlas = ExtResource("1_rwj0m")
+region = Rect2(0, 48, 16, 16)
+filter_clip = true
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_76k5b"]
+texture = SubResource("AtlasTexture_no0hv")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_asx5y"]
+bg_color = Color(0, 0, 0, 1)
+
 [resource]
 Button/styles/hover = SubResource("StyleBoxFlat_pcwym")
 Button/styles/normal = SubResource("StyleBoxFlat_jt0in")
@@ -23,3 +38,5 @@ Button/styles/pressed = SubResource("StyleBoxFlat_jt0in")
 GridContainer/constants/h_separation = 12
 GridContainer/constants/v_separation = 12
 Label/font_sizes/font_size = 6
+Panel/styles/panel = SubResource("StyleBoxTexture_76k5b")
+PanelContainer/styles/panel = SubResource("StyleBoxFlat_asx5y")

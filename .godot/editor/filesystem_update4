@@ -1,7 +1,7 @@
-res://player/player.tscn
+res://levels/level_editor.tscn
 res://art/visibility.gdshader
 res://ui/menu.tres
-res://levels/level_2.tscn
-res://objects/firepit.tscn
-res://objects/knight/knight.tscn
-res://globals/game_manager.gd
+res://ui/main_menu.tscn
+res://ui/credits_menu.tscn
+res://ui/level_select.tscn
+res://levels/level_manager.gd

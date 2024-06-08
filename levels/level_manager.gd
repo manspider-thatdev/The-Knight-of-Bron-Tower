@@ -1,7 +1,7 @@
 extends TileMap
 
 
-const KEY_TEXTURE = preload("res://ui/key_texture.tscn")
+const KEY_TEXTURE = preload("res://ui/reused/key_texture.tscn")
 
 
 func _ready():

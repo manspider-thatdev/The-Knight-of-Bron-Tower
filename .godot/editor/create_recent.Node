@@ -1,8 +1,10 @@
+ColorRect
+TextureRect
+PanelContainer
 PointLight2D
 AudioStreamPlayer2D
 Node
 AudioStreamPlayer
-TextureRect
 HBoxContainer
 Label
 Control
@@ -11,5 +13,3 @@ TextureButton
 AspectRatioContainer
 Panel
 GridContainer
-Sprite2D
-CollisionShape2D

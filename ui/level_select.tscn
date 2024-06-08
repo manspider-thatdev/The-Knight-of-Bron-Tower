@@ -1,22 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bwx1avchebes3"]
+[gd_scene load_steps=5 format=3 uid="uid://bwx1avchebes3"]
 
-[ext_resource type="Texture2D" uid="uid://by4fpjw3bu86u" path="res://art/art.png" id="1_liwqq"]
 [ext_resource type="Script" path="res://ui/level_select.gd" id="2_2np3s"]
 [ext_resource type="Theme" uid="uid://cyyh23cla17b6" path="res://ui/menu.tres" id="2_qgaqs"]
-[ext_resource type="PackedScene" uid="uid://ctn2i1gxvcwih" path="res://ui/back_button.tscn" id="4_baop0"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p82i1"]
-atlas = ExtResource("1_liwqq")
-region = Rect2(0, 48, 16, 16)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_v1k0s"]
-texture = SubResource("AtlasTexture_p82i1")
-expand_margin_left = 16.0
-expand_margin_top = 16.0
-expand_margin_right = 16.0
-expand_margin_bottom = 16.0
-axis_stretch_horizontal = 2
-axis_stretch_vertical = 2
+[ext_resource type="PackedScene" uid="uid://cecvcdkt0pxal" path="res://ui/reused/background.tscn" id="3_k8bbc"]
+[ext_resource type="PackedScene" uid="uid://ctn2i1gxvcwih" path="res://ui/reused/back_button.tscn" id="4_baop0"]
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
@@ -30,14 +17,8 @@ size_flags_vertical = 3
 theme = ExtResource("2_qgaqs")
 script = ExtResource("2_2np3s")
 
-[node name="Background" type="Panel" parent="."]
+[node name="Background" parent="." instance=ExtResource("3_k8bbc")]
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxTexture_v1k0s")
 
 [node name="LevelContainer" type="GridContainer" parent="."]
 layout_mode = 1
@@ -63,5 +44,9 @@ icon_alignment = 1
 
 [node name="BackButton" parent="." instance=ExtResource("4_baop0")]
 layout_mode = 1
+offset_left = 8.0
+offset_top = -28.0
+offset_right = 28.0
+offset_bottom = -8.0
 
 [connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
