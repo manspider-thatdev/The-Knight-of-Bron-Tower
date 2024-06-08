@@ -1,7 +1,7 @@
+PointLight2D
 ColorRect
 TextureRect
 PanelContainer
-PointLight2D
 AudioStreamPlayer2D
 Node
 AudioStreamPlayer
@@ -12,4 +12,3 @@ Button
 TextureButton
 AspectRatioContainer
 Panel
-GridContainer

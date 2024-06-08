@@ -5,3 +5,5 @@ res://ui/main_menu.tscn
 res://ui/credits_menu.tscn
 res://ui/level_select.tscn
 res://levels/level_manager.gd
+res://objects/player/player.tscn
+res://ui/reused/background.tscn
