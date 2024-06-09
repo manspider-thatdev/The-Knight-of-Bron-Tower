@@ -38,7 +38,9 @@ var post_index: int = 0:
 	set(value):
 		post_index = wrapi(value, 0, post_positions.size())
 
-var target: Vector2
+var target: Vector2:
+	set(value):
+		target = value.round()
 var target_direction: Vector2
 var target_type: TargetType
 

@@ -7,3 +7,6 @@ res://ui/level_select.tscn
 res://levels/level_manager.gd
 res://objects/player/player.tscn
 res://ui/reused/background.tscn
+res://levels/level_1.tscn
+res://objects/knight/knight.gd
+res://levels/level_with_some_fake_walls.tscn
