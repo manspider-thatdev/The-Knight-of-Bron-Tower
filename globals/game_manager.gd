@@ -5,10 +5,18 @@ signal game_turn(turn_time)
 
 
 @onready var levels: Array[String] = [
+	"res://levels/level_1.tscn", 
+	"res://levels/level_fire_pit.tscn", 
+	"res://levels/level_with_some_fake_walls.tscn",
 	]
 
 var turn_time: float = 0.5
-var level_id: int = 0
+var level_id: int = 0:
+	set(value):
+		level_id = value
+		if value > farthest_level:
+			farthest_level = value
+var farthest_level: int = 0
 
 
 func load_level(load_level_id):

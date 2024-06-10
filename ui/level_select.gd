@@ -12,6 +12,8 @@ func _ready():
 		var button := new_button_container.get_child(0) as Button
 		button.text = str(i + 2)
 		button.pressed.connect(_on_level_button_pressed.bind(i + 1))
+		if i + 1 > GameManager.farthest_level:
+			button.disabled = true
 
 
 func _on_back_button_pressed():
