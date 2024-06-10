@@ -723,11 +723,3 @@ theme_override_constants/separation = 0
 alignment = 2
 
 [connection signal="pressed" from="LevelUI/BackButton" to="." method="_on_back_button_pressed"]
-[connection signal="area_entered" from="Door" to="Door" method="_on_area_entered"]
-[connection signal="area_entered" from="@Area2D@226982" to="@Area2D@226982" method="_on_area_entered"]
-[connection signal="area_entered" from="@Area2D@226983" to="@Area2D@226983" method="_on_area_entered"]
-[connection signal="area_entered" from="@Area2D@226984" to="@Area2D@226984" method="_on_area_entered"]
-[connection signal="area_entered" from="Key" to="Key" method="_on_area_entered"]
-[connection signal="area_entered" from="@Area2D@226985" to="@Area2D@226985" method="_on_area_entered"]
-[connection signal="area_entered" from="@Area2D@226986" to="@Area2D@226986" method="_on_area_entered"]
-[connection signal="area_entered" from="@Area2D@226987" to="@Area2D@226987" method="_on_area_entered"]
