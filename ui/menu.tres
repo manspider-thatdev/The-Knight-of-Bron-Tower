@@ -1,6 +1,14 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://cyyh23cla17b6"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://cyyh23cla17b6"]
 
 [ext_resource type="Texture2D" uid="uid://by4fpjw3bu86u" path="res://art/art.png" id="1_rwj0m"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eo4od"]
+bg_color = Color(0.0705882, 0.0823529, 0.160784, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pcwym"]
 bg_color = Color(0.231373, 0.247059, 0.384314, 1)
@@ -32,6 +40,7 @@ axis_stretch_vertical = 1
 bg_color = Color(0, 0, 0, 1)
 
 [resource]
+Button/styles/disabled = SubResource("StyleBoxFlat_eo4od")
 Button/styles/hover = SubResource("StyleBoxFlat_pcwym")
 Button/styles/normal = SubResource("StyleBoxFlat_jt0in")
 Button/styles/pressed = SubResource("StyleBoxFlat_jt0in")
