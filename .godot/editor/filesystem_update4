@@ -10,3 +10,8 @@ res://ui/reused/background.tscn
 res://levels/level_1.tscn
 res://objects/knight/knight.gd
 res://levels/level_with_some_fake_walls.tscn
+res://objects/firepit/firepit.tscn
+res://objects/firepit/firepit.gd
+res://objects/door/door_particles.tscn
+res://objects/door/door.tscn
+res://objects/door/door.gd
