@@ -18,3 +18,4 @@ res://objects/door/door.gd
 res://levels/level_fire_pit.tscn
 res://globals/game_manager.gd
 res://ui/level_select.gd
+res://objects/player/player.gd

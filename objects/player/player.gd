@@ -23,6 +23,11 @@ func _ready():
 	GameManager.connect("game_turn", _on_game_turn)
 
 
+func _input(event):
+	if event.is_action_pressed("reset"):
+		get_tree().reload_current_scene()
+
+
 func _process(_delta):
 	if can_move:
 		target_direction = move_inputs()
