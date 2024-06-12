@@ -5,6 +5,7 @@ extends Control
 
 
 func _ready():
+	$LevelContainer/ButtonContainer/Button.grab_focus()
 	button_container.get_child(0).pressed.connect(_on_level_button_pressed.bind(0))
 	for i in GameManager.levels.size() - 1:
 		var new_button_container := button_container.duplicate()

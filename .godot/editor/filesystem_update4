@@ -19,3 +19,17 @@ res://levels/level_fire_pit.tscn
 res://globals/game_manager.gd
 res://ui/level_select.gd
 res://objects/player/player.gd
+res://ui/reused/back_button.tscn
+res://ui/main_menu.gd
+res://ui/credits_menu.gd
+res://objects/fake_wall/fake_wall_down.tscn
+res://objects/fake_wall/fake_wall_left.tscn
+res://objects/fake_wall/fake_wall_right.tscn
+res://objects/fake_wall/fake_wall_up.tscn
+res://objects/key/key.tscn
+res://objects/lanterns/lantern_down.tscn
+res://objects/lanterns/lantern_left.tscn
+res://objects/lanterns/lantern_right.tscn
+res://objects/lanterns/lantern_up.tscn
+res://objects/ladder/ladder.tscn
+res://levels/level_key_door.tscn

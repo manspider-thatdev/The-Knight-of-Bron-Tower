@@ -2,7 +2,7 @@ extends Control
 
 
 func _ready():
-	pass # Could perhaps get user data
+	$PlayButton.grab_focus()
 
 
 func _on_play_button_pressed():

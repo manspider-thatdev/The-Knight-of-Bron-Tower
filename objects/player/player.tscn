@@ -145,9 +145,8 @@ size = Vector2(4, 4)
 [node name="Player" type="AnimatedSprite2D"]
 z_index = 2
 sprite_frames = SubResource("SpriteFrames_r5ydb")
-animation = &"up"
+animation = &"right"
 autoplay = "right"
-frame_progress = 0.38205
 script = ExtResource("2_buhwe")
 key_layer = 8
 door_layer = 16
