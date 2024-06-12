@@ -11,6 +11,8 @@ config_version=5
 [application]
 
 config/name="The (K)night of Bron Tower"
+config/version="1.0"
+run/main_scene="res://ui/main_menu.tscn"
 config/features=PackedStringArray("4.2", "GL Compatibility")
 config/icon="res://icon.svg"
 
