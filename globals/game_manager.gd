@@ -6,6 +6,8 @@ signal game_turn(turn_time)
 
 @onready var levels: Array[String] = [
 	"res://levels/level_1.tscn", 
+	"res://levels/knights_move.tscn",
+	"res://levels/knight_cycles.tscn",
 	"res://levels/level_fire_pit.tscn", 
 	"res://levels/level_key_door.tscn",
 	"res://levels/level_with_some_fake_walls.tscn",
