@@ -99,7 +99,8 @@ func _on_game_turn(turn_time: float):
 	if global_position == target and target_type == TargetType.FIRE:
 		for raycast in raycasts:
 			var collider = raycast.get_collider()
-			if not collider is TileMap and collider.collision_layer == fire_layer:
+			if not collider is TileMap and collider.collision_layer == fire_layer\
+			and global_position.distance_squared_to(raycast.get_collision_point()) < 256:
 				collider.put_out()
 	
 	if end_level:

@@ -8,7 +8,7 @@ extends Area2D
 @onready var light: PointLight2D = $Light
 @onready var particles: CPUParticles2D = $Particles
 
-@export var is_lit := false
+var is_lit := false
 @export_flags_2d_physics var unlit_layer := 32
 @export_flags_2d_physics var lit_layer := 64
 

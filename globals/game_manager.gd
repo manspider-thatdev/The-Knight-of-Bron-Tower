@@ -10,8 +10,10 @@ signal game_turn(turn_time)
 	"res://levels/knight_cycles.tscn",
 	"res://levels/level_fire_pit.tscn", 
 	"res://levels/level_key_door.tscn",
+	"res://levels/knight_patrol.tscn",
 	"res://levels/level_with_some_fake_walls.tscn",
 	"res://levels/level__with_fire_quirk.tscn",
+	"res://levels/midknight_snack.tscn",
 	]
 
 var turn_time: float = 0.5
