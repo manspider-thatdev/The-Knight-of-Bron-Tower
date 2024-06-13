@@ -11,7 +11,3 @@ layer_3/tile_data = PackedInt32Array(262153, 0, 524288, 196621, 0, 458752, 19661
 [node name="Knight" parent="." index="1" instance=ExtResource("2_ybvng")]
 position = Vector2(184, 40)
 post_positions = Array[Vector2]([Vector2(184, 40)])
-
-[connection signal="area_entered" from="Key" to="Key" method="_on_area_entered"]
-[connection signal="area_entered" from="Door" to="Door" method="_on_area_entered"]
-[connection signal="area_entered" from="Ladder" to="Ladder" method="_on_area_entered"]
