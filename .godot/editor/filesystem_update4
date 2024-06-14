@@ -44,3 +44,4 @@ res://levels/in_the_walls.tscn
 res://levels/double_duty.tscn
 res://levels/knight_knight_knight.tscn
 res://levels/epic_level.tscn
+res://objects/ladder/ladder.gd

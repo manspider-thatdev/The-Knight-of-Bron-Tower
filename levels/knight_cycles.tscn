@@ -26,3 +26,5 @@ post_positions = Array[Vector2]([Vector2(136, 104), Vector2(136, 56), Vector2(21
 position = Vector2(88, 40)
 default_face = 1
 post_positions = Array[Vector2]([Vector2(88, 40), Vector2(136, 40), Vector2(136, 120), Vector2(88, 120)])
+
+[connection signal="area_entered" from="Ladder" to="Ladder" method="_on_area_entered"]
