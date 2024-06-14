@@ -19,6 +19,7 @@ signal game_turn(turn_time)
 	"res://levels/level__with_fire_quirk.tscn",
 	"res://levels/double_duty.tscn",
 	"res://levels/midknight_snack.tscn",
+	"res://levels/epic_level.tscn",
 	]
 
 var turn_time: float = 0.5
