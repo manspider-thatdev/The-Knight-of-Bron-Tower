@@ -10,6 +10,7 @@ signal game_turn(turn_time)
 	"res://levels/knights_move.tscn",
 	"res://levels/knight_cycles.tscn",
 	"res://levels/level_fire_pit.tscn", 
+	"res://levels/in_the_walls.tscn",
 	"res://levels/level_key_door.tscn",
 	"res://levels/knight_patrol.tscn",
 	"res://levels/level_with_some_fake_walls.tscn",
