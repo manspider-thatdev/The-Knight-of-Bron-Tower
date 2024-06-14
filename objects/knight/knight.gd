@@ -55,7 +55,7 @@ func _ready():
 	if post_positions.is_empty():
 		post_positions.append(global_position)
 	
-	global_position = post_positions[0]
+	position = post_positions[0]
 	post_index += 1
 	target = post_positions[post_index]
 	
@@ -64,7 +64,7 @@ func _ready():
 
 
 func _on_game_turn(turn_time: float):
-	target_direction = target - global_position
+	target_direction = target - position
 	
 	var animation_suffix := animation.get_slice("_", 1)
 	var tween: Tween = create_tween()
@@ -74,7 +74,7 @@ func _on_game_turn(turn_time: float):
 		tween.tween_property(self, "modulate", Color.WHITE, turn_time * 0.5)
 		await tween.step_finished
 		
-		global_position = target
+		position = target
 		var face_direction := default_direction
 		if post_positions.size() > 1:
 			post_index += 1
@@ -94,13 +94,14 @@ func _on_game_turn(turn_time: float):
 		tween.tween_interval(turn_time)
 	
 	await tween.finished
-	global_position = global_position.round()
+	await get_tree().process_frame
+	position = position.round()
 	
-	if global_position == target and target_type == TargetType.FIRE:
+	if position == target and target_type == TargetType.FIRE:
 		for raycast in raycasts:
 			var collider = raycast.get_collider()
 			if not collider is TileMap and collider.collision_layer == fire_layer\
-			and global_position.distance_squared_to(raycast.get_collision_point()) < 256:
+			and position.distance_squared_to(raycast.get_collision_point()) < 256:
 				collider.put_out()
 	
 	if end_level:
@@ -116,7 +117,7 @@ func _on_game_turn(turn_time: float):
 
 
 func set_target():
-	if global_position == target:
+	if position == target:
 		if target_type == TargetType.POST:
 			post_index += 1
 		else:

@@ -22,7 +22,7 @@ signal game_turn(turn_time)
 	"res://levels/epic_level.tscn",					# 15
 	]
 
-var turn_time: float = 0.5
+var turn_time: float = 0.37
 var level_id: int = 0:
 	set(value):
 		level_id = value

@@ -15,7 +15,3 @@ post_positions = Array[Vector2]([Vector2(104, 56), Vector2(104, 104)])
 [node name="Knight2" parent="." index="2" instance=ExtResource("2_awg1a")]
 position = Vector2(200, 56)
 post_positions = Array[Vector2]([Vector2(200, 56), Vector2(200, 104)])
-
-[connection signal="area_entered" from="Ladder" to="Ladder" method="_on_area_entered"]
-[connection signal="area_entered" from="Door" to="Door" method="_on_area_entered"]
-[connection signal="area_entered" from="Key" to="Key" method="_on_area_entered"]

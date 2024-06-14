@@ -80,7 +80,7 @@ func _on_game_turn(turn_time: float):
 	.as_relative()
 	
 	await tween.finished
-	global_position = global_position.round()
+	position = position.round()
 	can_move = true
 
 
