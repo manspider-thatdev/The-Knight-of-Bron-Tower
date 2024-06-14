@@ -8,6 +8,7 @@ signal game_turn(turn_time)
 	"res://levels/level_1.tscn", 
 	"res://levels/knight_wing.tscn",
 	"res://levels/knights_move.tscn",
+	"res://levels/knight_knight_knight.tscn",
 	"res://levels/knight_cycles.tscn",
 	"res://levels/level_fire_pit.tscn", 
 	"res://levels/in_the_walls.tscn",
