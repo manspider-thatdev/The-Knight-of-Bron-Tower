@@ -16,6 +16,7 @@ signal game_turn(turn_time)
 	"res://levels/level_with_some_fake_walls.tscn",
 	"res://levels/knight_watch.tscn",
 	"res://levels/level__with_fire_quirk.tscn",
+	"res://levels/double_duty.tscn",
 	"res://levels/midknight_snack.tscn",
 	]
 
