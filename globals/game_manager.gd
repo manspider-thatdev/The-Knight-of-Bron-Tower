@@ -42,7 +42,8 @@ func _ready():
 
 func load_level(load_level_id):
 	level_id = load_level_id
-	ScreenTransition.change_scene(levels[level_id])
+	ScreenTransition.change_scene(levels[level_id], \
+			ScreenTransition.SLIDE, ScreenTransition.FADE)
 
 
 func load_next_level():
@@ -50,9 +51,11 @@ func load_next_level():
 	
 	if level_id >= levels.size():
 		level_id = 0
-		ScreenTransition.change_scene("res://ui/credits_menu.tscn")
+		ScreenTransition.change_scene("res://ui/credits_menu.tscn", \
+			ScreenTransition.FADE, ScreenTransition.SLIDE)
 	else:
-		ScreenTransition.change_scene(levels[level_id])
+		ScreenTransition.change_scene(levels[level_id], \
+			ScreenTransition.FADE, ScreenTransition.FADE)
 
 
 func save():

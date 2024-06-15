@@ -18,7 +18,8 @@ func _ready():
 
 
 func _on_back_button_pressed():
-	ScreenTransition.change_scene("res://ui/main_menu.tscn")
+	ScreenTransition.change_scene("res://ui/main_menu.tscn", \
+			ScreenTransition.SLIDE, ScreenTransition.SLIDE)
 
 
 func _on_level_button_pressed(level_id: int):

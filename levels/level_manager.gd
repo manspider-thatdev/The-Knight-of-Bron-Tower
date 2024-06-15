@@ -17,4 +17,5 @@ func remove_key():
 
 
 func _on_back_button_pressed():
-	ScreenTransition.change_scene("res://ui/level_select.tscn")
+	ScreenTransition.change_scene("res://ui/level_select.tscn", \
+			ScreenTransition.FADE, ScreenTransition.SLIDE)
