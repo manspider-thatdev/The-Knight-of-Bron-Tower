@@ -45,3 +45,4 @@ res://levels/double_duty.tscn
 res://levels/knight_knight_knight.tscn
 res://levels/epic_level.tscn
 res://objects/ladder/ladder.gd
+res://globals/audio_manager.tscn

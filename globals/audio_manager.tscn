@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://by0llpivauy8o"]
+[gd_scene load_steps=7 format=3 uid="uid://by0llpivauy8o"]
 
 [ext_resource type="Script" path="res://globals/audio_manager.gd" id="1_lcrvd"]
 [ext_resource type="AudioStream" uid="uid://3summbc8yni0" path="res://audio/key.wav" id="2_mdmcc"]
 [ext_resource type="AudioStream" uid="uid://pp4np52akdyd" path="res://audio/door.wav" id="3_3ohk0"]
 [ext_resource type="AudioStream" uid="uid://b7d5ql2gnmqvc" path="res://audio/die.wav" id="4_ffsm3"]
 [ext_resource type="AudioStream" uid="uid://6gpskjm7ym70" path="res://audio/win.wav" id="5_46nke"]
+[ext_resource type="AudioStream" uid="uid://4fhfje5owxpe" path="res://audio/song.wav" id="6_8ja7i"]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_lcrvd")
@@ -27,3 +28,7 @@ area_mask = 0
 [node name="WinAudio" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("5_46nke")
 area_mask = 0
+
+[node name="MusicAudio" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_8ja7i")
+autoplay = true

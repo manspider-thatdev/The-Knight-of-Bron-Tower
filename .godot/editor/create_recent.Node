@@ -1,9 +1,9 @@
+AudioStreamPlayer2D
 CPUParticles2D
 PointLight2D
 ColorRect
 TextureRect
 PanelContainer
-AudioStreamPlayer2D
 Node
 AudioStreamPlayer
 HBoxContainer
