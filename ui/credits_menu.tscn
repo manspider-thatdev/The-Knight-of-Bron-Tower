@@ -18,19 +18,44 @@ script = ExtResource("2_mqko7")
 [node name="Background" parent="." instance=ExtResource("3_p62sr")]
 layout_mode = 1
 
-[node name="Label" type="Label" parent="."]
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.16
-anchor_top = 0.2
+anchor_top = 0.16
 anchor_right = 0.84
 anchor_bottom = 0.7
-grow_horizontal = 2
-grow_vertical = 2
-text = "Credits:
-Developed by Manspider Studios, also known as Parker Peterson. Yes it was just one man behind this game including all asset creation. One thing I didn't make however was...
-Game Engine:
-This game was made use the Godot game engine."
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Credits:"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label2" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+text = "Developed by Manspider Studios, also known as Parker Peterson. Yes it was just one man behind this game including all asset creation. One thing I didn't make however was the..."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label3" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+theme_override_font_sizes/font_size = 12
+text = "Game Engine:"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Label4" type="Label" parent="VBoxContainer"]
+custom_minimum_size = Vector2(20, 0)
+layout_mode = 2
+text = "This game was made use the Godot game engine."
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
