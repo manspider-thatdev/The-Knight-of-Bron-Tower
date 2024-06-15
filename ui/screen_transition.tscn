@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3 uid="uid://chw2wusslymlf"]
+
+[ext_resource type="Theme" uid="uid://cyyh23cla17b6" path="res://ui/menu.tres" id="1_i6tjq"]
+[ext_resource type="Script" path="res://ui/screen_transition.gd" id="1_nlkjy"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_i33be"]
+bg_color = Color(0, 0, 0, 1)
+
+[node name="ScreenTransition" type="Control"]
+z_index = 200
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_i6tjq")
+script = ExtResource("1_nlkjy")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_i33be")

@@ -1,3 +1,4 @@
+Panel
 VBoxContainer
 AudioStreamPlayer2D
 CPUParticles2D
@@ -12,4 +13,3 @@ Label
 Control
 Button
 TextureButton
-AspectRatioContainer

@@ -42,7 +42,7 @@ func _ready():
 
 func load_level(load_level_id):
 	level_id = load_level_id
-	get_tree().change_scene_to_file(levels[level_id])
+	ScreenTransition.change_scene(levels[level_id])
 
 
 func load_next_level():
@@ -50,8 +50,9 @@ func load_next_level():
 	
 	if level_id >= levels.size():
 		level_id = 0
-	
-	get_tree().change_scene_to_file(levels[level_id])
+		ScreenTransition.change_scene("res://ui/credits_menu.tscn")
+	else:
+		ScreenTransition.change_scene(levels[level_id])
 
 
 func save():

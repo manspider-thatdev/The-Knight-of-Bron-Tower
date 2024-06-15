@@ -12,5 +12,3 @@ layer_3/tile_data = PackedInt32Array(327693, 0, 458752, 458762, 0, 393216, 19661
 position = Vector2(200, 88)
 default_face = 0
 post_positions = Array[Vector2]([Vector2(200, 88)])
-
-[connection signal="area_entered" from="Ladder" to="Ladder" method="_on_area_entered"]

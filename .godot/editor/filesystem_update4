@@ -46,3 +46,5 @@ res://levels/knight_knight_knight.tscn
 res://levels/epic_level.tscn
 res://objects/ladder/ladder.gd
 res://globals/audio_manager.tscn
+res://ui/screen_transition.tscn
+res://ui/screen_transition.gd

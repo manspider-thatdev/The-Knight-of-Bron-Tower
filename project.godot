@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 
 GameManager="*res://globals/game_manager.gd"
 AudioManager="*res://globals/audio_manager.tscn"
+ScreenTransition="*res://ui/screen_transition.tscn"
 
 [display]
 
