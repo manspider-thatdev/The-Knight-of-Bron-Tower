@@ -1,5 +1,6 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://cyyh23cla17b6"]
+[gd_resource type="Theme" load_steps=9 format=3 uid="uid://cyyh23cla17b6"]
 
+[ext_resource type="FontFile" uid="uid://by66l2p3faifl" path="res://ui/PixeloidSans-mLxMm.ttf" id="1_7vj6l"]
 [ext_resource type="Texture2D" uid="uid://by4fpjw3bu86u" path="res://art/art.png" id="1_rwj0m"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_eo4od"]
@@ -40,6 +41,7 @@ axis_stretch_vertical = 1
 bg_color = Color(0, 0, 0, 1)
 
 [resource]
+Button/fonts/font = ExtResource("1_7vj6l")
 Button/styles/disabled = SubResource("StyleBoxFlat_eo4od")
 Button/styles/hover = SubResource("StyleBoxFlat_pcwym")
 Button/styles/normal = SubResource("StyleBoxFlat_jt0in")
@@ -47,5 +49,6 @@ Button/styles/pressed = SubResource("StyleBoxFlat_jt0in")
 GridContainer/constants/h_separation = 12
 GridContainer/constants/v_separation = 12
 Label/font_sizes/font_size = 6
+Label/fonts/font = ExtResource("1_7vj6l")
 Panel/styles/panel = SubResource("StyleBoxTexture_76k5b")
 PanelContainer/styles/panel = SubResource("StyleBoxFlat_asx5y")
