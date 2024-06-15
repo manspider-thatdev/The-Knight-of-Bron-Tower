@@ -4,6 +4,8 @@ extends Node
 signal game_turn(turn_time)
 
 
+var save_path := "user://save_data.save"
+
 @onready var levels: Array[String] = [
 	"res://levels/level_1.tscn", 					# 1
 	"res://levels/knight_wing.tscn",				# 2
@@ -28,7 +30,14 @@ var level_id: int = 0:
 		level_id = value
 		if value > farthest_level:
 			farthest_level = value
+			save()
 var farthest_level: int = 0
+
+
+func _ready():
+	if FileAccess.file_exists(save_path):
+		var file = FileAccess.open(save_path, FileAccess.READ)
+		farthest_level = file.get_var(farthest_level)
 
 
 func load_level(load_level_id):
@@ -43,3 +52,8 @@ func load_next_level():
 		level_id = 0
 	
 	get_tree().change_scene_to_file(levels[level_id])
+
+
+func save():
+	var file = FileAccess.open(save_path, FileAccess.WRITE)
+	file.store_var(farthest_level)
