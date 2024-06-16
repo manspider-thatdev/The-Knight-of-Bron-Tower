@@ -1,5 +1,5 @@
 ea4bc82a6ad023ab7ee23ee620429895
-::res://::1718504066
+::res://::1718504771
 export_presets.cfg::TextFile::-1::1718504065::0::1::::<><>::
 icon.svg::CompressedTexture2D::1845387245217874012::1707843354::1707843359::1::::<><>::
 ::res://art/::1718503470
@@ -16,11 +16,11 @@ ignite.wav::AudioStreamWAV::9082907928899249429::1717793257::1717801288::1::::<>
 key.wav::AudioStreamWAV::2003682822781105453::1717793038::1717801288::1::::<><>::
 song.wav::AudioStreamWAV::2046232782464159918::1718413570::1718413660::1::::<><>::
 win.wav::AudioStreamWAV::2189183858210834953::1717794007::1717801288::1::::<><>::
-::res://builds/::1718504192
-::res://builds/web/::1718504192
-web_build.apple-touch-icon.png::CompressedTexture2D::5016981859327521603::1718504065::1718504197::1::::<><>::
-web_build.icon.png::CompressedTexture2D::5456451442473578351::1718504065::1718504197::1::::<><>::
-web_build.png::CompressedTexture2D::514631314410642524::1718504065::1718504197::1::::<><>::
+::res://builds/::1718504784
+::res://builds/web/::1718504770
+index.apple-touch-icon.png::CompressedTexture2D::2953969725916292601::1718504770::1718505002::1::::<><>::
+index.icon.png::CompressedTexture2D::3810921114743102256::1718504770::1718505002::1::::<><>::
+index.png::CompressedTexture2D::4164031000936997471::1718504770::1718505002::1::::<><>::
 ::res://globals/::1718503470
 audio_manager.gd::GDScript::-1::1717805924::0::1::::<>Node<>::
 audio_manager.tscn::PackedScene::4123250706674403984::1718503470::0::1::::<><>::res://globals/audio_manager.gd<>uid://3summbc8yni0::::res://audio/key.wav<>uid://pp4np52akdyd::::res://audio/door.wav<>uid://b7d5ql2gnmqvc::::res://audio/die.wav<>uid://6gpskjm7ym70::::res://audio/win.wav<>uid://4fhfje5owxpe::::res://audio/song.wav
